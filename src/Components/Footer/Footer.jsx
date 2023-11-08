@@ -55,7 +55,13 @@ const Footer = () => {
                 <div>
                     <p>
                         All Right Reserved To{" "}
-                        <a className="font-semibold hover:underline duration-300" href="https://github.com/bluebird089">"bluebird089"</a>
+                        <a
+                            className="font-semibold hover:underline duration-300"
+                            href="https://github.com/bluebird089"
+                        >
+                            {/* eslint-disable-next-line react/no-unescaped-entities */}
+                            "bluebird089"
+                        </a>
                     </p>
                 </div>
             </nav>
