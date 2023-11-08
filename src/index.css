@@ -8,7 +8,7 @@ body {
     font-family: "Jost", sans-serif;
 }
 
-.logo{
+.logo, .sidebar-title{
     font-family: 'Pacifico', cursive;
 }
 

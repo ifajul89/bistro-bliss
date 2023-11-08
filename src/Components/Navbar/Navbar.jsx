@@ -1,6 +1,7 @@
 import { Link, NavLink } from "react-router-dom";
 import { MdOutlinePersonOutline } from "react-icons/md";
 import { BiSolidCartAlt } from "react-icons/bi";
+import { HiMenuAlt1 } from "react-icons/hi";
 
 const Navbar = () => {
     const navItems = (
@@ -30,23 +31,117 @@ const Navbar = () => {
     );
 
     return (
-        <div className="flex justify-around items-center border-4 container mx-auto p-2 my-3 rounded-t-[50px] rounded-b-3xl">
-            <div>
-                <ul className="flex gap-5 font-medium">{navItems}</ul>
-            </div>
-            <div className="flex logo leading-none items-center">
-                <h3 className="text-6xl">B</h3>
-                <div className="text-xl font-semibold leading-none">
-                    <h3>istro</h3>
-                    <h3>liss~</h3>
+        <div className="container mx-auto">
+            <div className="flex justify-around items-center mx-3 md:mx-0 border-4 p-2 my-3 rounded-t-[50px] rounded-b-3xl px-3 md:px-10">
+                <div className="flex items-center">
+                    <ul className="hidden lg:flex gap-5 font-medium">
+                        {navItems}
+                    </ul>
+                    <label
+                        htmlFor="my-drawer"
+                        className="btn btn-sm btn-ghost flex items-center lg:hidden drawer-button"
+                    >
+                        <HiMenuAlt1 className="text-3xl"></HiMenuAlt1>
+                    </label>
                 </div>
-            </div>
-            <div className="flex gap-5 items-center">
-                <BiSolidCartAlt className="text-xl text-[#F2A64D]"></BiSolidCartAlt>
-                <MdOutlinePersonOutline className="text-xl"></MdOutlinePersonOutline>
-                <Link className="text-lg font-medium hover:text-[#F2A64D] duration-300" to="/login">Log In</Link>
-                <span>|</span>
-                <Link className="text-lg font-medium hover:text-[#F2A64D] duration-300" to="/register">Register</Link>
+                <div className="flex logo flex-1 justify-start lg:justify-center leading-none items-center">
+                    <h3 className="text-3xl md:text-6xl">B</h3>
+                    <div className="text-sm md:text-xl font-semibold leading-none">
+                        <h3>istro</h3>
+                        <h3>liss~</h3>
+                    </div>
+                </div>
+                <div className="flex gap-5 items-center">
+                    <BiSolidCartAlt className="text-xl text-[#F2A64D]"></BiSolidCartAlt>
+                    <MdOutlinePersonOutline className="text-xl"></MdOutlinePersonOutline>
+                    <div className="hidden lg:flex items-center gap-5">
+                        <Link
+                            className="text-lg font-medium hover:text-[#F2A64D] duration-300"
+                            to="/login"
+                        >
+                            Log In
+                        </Link>
+                        <span>|</span>
+                        <Link
+                            className="text-lg font-medium hover:text-[#F2A64D] duration-300"
+                            to="/register"
+                        >
+                            Register
+                        </Link>
+                    </div>
+                </div>
+                <div>
+                    <div className="drawer">
+                        <input
+                            id="my-drawer"
+                            type="checkbox"
+                            className="drawer-toggle"
+                        />
+                        <div className="drawer-content">
+                            {/* Page content here */}
+                        </div>
+                        <div className="drawer-side">
+                            <label
+                                htmlFor="my-drawer"
+                                aria-label="close sidebar"
+                                className="drawer-overlay"
+                            ></label>
+                            <ul className="p-4 w-40 min-h-full bg-white text-base-content">
+                                {/* Sidebar content here */}
+                                <h3 className="sidebar-title font-semibold text-lg my-5">
+                                    Go to Page,
+                                </h3>
+                                <div className="space-y-1">
+                                    <li>
+                                        <NavLink
+                                            className="hover:text-[#F2A64D] duration-300"
+                                            to="/"
+                                        >
+                                            Home
+                                        </NavLink>
+                                    </li>
+                                    <div className="h-[1px] w-full bg-slate-300"></div>
+                                    <li>
+                                        <NavLink
+                                            className="hover:text-[#F2A64D] duration-300"
+                                            to="/all-items"
+                                        >
+                                            All Items
+                                        </NavLink>
+                                    </li>
+                                    <div className="h-[1px] w-full bg-slate-300"></div>
+                                    <li>
+                                        <NavLink
+                                            className="hover:text-[#F2A64D] duration-300"
+                                            to="/blog"
+                                        >
+                                            Blog
+                                        </NavLink>
+                                    </li>
+                                    <div className="h-[1px] w-full bg-slate-300"></div>
+                                    <li>
+                                        <NavLink
+                                            className="font-medium hover:text-[#F2A64D] duration-300"
+                                            to="/login"
+                                        >
+                                            Log In
+                                        </NavLink>
+                                    </li>
+                                    <div className="h-[1px] w-full bg-slate-300"></div>
+                                    <li>
+                                        <NavLink
+                                            className="font-medium hover:text-[#F2A64D] duration-300"
+                                            to="/register"
+                                        >
+                                            Register
+                                        </NavLink>
+                                    </li>
+                                    <div className="h-[1px] w-full bg-slate-300"></div>
+                                </div>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     );
