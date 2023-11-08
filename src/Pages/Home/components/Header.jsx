@@ -1,5 +1,5 @@
 import { RiMenuSearchFill } from "react-icons/ri";
-import { SiCodechef } from "react-icons/si";
+import { GiForkKnifeSpoon } from "react-icons/gi";
 
 const Header = () => {
     return (
@@ -23,7 +23,7 @@ const Header = () => {
             <div className=" col-span-5 md:col-span-2 order-3 flex gap-5 flex-col items-center">
                 <div className="border-4 h-full w-full border-[#2F2F2F] rounded-full p-2 flex items-end">
                     <div className="border-4 aspect-square flex items-center justify-center w-full border-[#2F2F2F] rounded-full">
-                        <SiCodechef className="text-5xl"></SiCodechef>
+                        <GiForkKnifeSpoon className="text-5xl"></GiForkKnifeSpoon>
                     </div>
                 </div>
                 <button className="btn rounded-full hover:bg-white hover:shadow-gray-400 shadow-gray-300 shadow-lg bg-white">
