@@ -1,10 +1,13 @@
-import { useContext } from "react";
-import LogInBg from "../../assets/login.jpg";
-import { AuthContext } from "../../Provider/AuthProvider";
+// import { useContext } from "react";
+// import { AuthContext } from "../../Provider/AuthProvider";
 import "./Register.css";
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import app from "../../Firebase/firebase.config";
+
+const auth = getAuth(app);
 
 const Register = () => {
-    const { createUser } = useContext(AuthContext);
+    // const { createUser } = useContext(AuthContext);
 
     const handleRegister = (e) => {
         e.preventDefault();
@@ -15,7 +18,7 @@ const Register = () => {
         const password = form.password.value;
         console.log(name, photo, email, password);
 
-        createUser(email, password)
+        createUserWithEmailAndPassword(auth, email, password)
             .then((result) => {
                 const user = result.user;
                 console.log(user);
@@ -27,9 +30,13 @@ const Register = () => {
 
     return (
         <div className="register-bg flex w-full rounded-xl container mx-auto">
-            <div className="w-[400px] p-10 flex flex-col justify-center space-y-5">
-                <h3 className="font-bold text-3xl">Welcome User</h3>
-                <p className="font-light">Please Create Your Account</p>
+            <div className="w-[600px] p-3 md:p-10 flex flex-col justify-center space-y-5">
+                <div>
+                    <h3 className="font-bold text-3xl">Welcome User</h3>
+                    <p className="font-light text-lg">
+                        Create Your Account With Email and Password
+                    </p>
+                </div>
                 <form onSubmit={handleRegister} className="space-y-3">
                     <div>
                         <label htmlFor="name">Name</label>

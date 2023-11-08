@@ -1,8 +1,9 @@
-/* eslint-disable react/prop-types */
 import { createContext, useState } from "react";
 import PropTypes from "prop-types";
-import { createUserWithEmailAndPassword } from "firebase/auth";
-import auth from "../Firebase/firebase.config";
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import app from "../Firebase/firebase.config";
+
+const auth = getAuth(app);
 
 export const AuthContext = createContext();
 
@@ -11,13 +12,13 @@ const AuthProvider = ({ children }) => {
     const [loading, setLoading] = useState(true);
 
     const createUser = (email, password) => {
-        createUserWithEmailAndPassword(auth, email, password);
+        return createUserWithEmailAndPassword(auth, email, password);
     };
 
     const authInfo = {
         user,
         loading,
-        createUser
+        createUser,
     };
 
     return (
@@ -25,7 +26,7 @@ const AuthProvider = ({ children }) => {
     );
 };
 
-AuthContext.propTypes = {
+AuthProvider.propTypes = {
     children: PropTypes.node.isRequired,
 };
 
