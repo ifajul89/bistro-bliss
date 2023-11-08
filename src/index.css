@@ -1,7 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Jost:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+body {
+    font-family: "Jost", sans-serif;
+}
+
+.logo{
+    font-family: 'Pacifico', cursive;
+}
 
 .active {
-    @apply text-pink-700;
+    @apply text-[#F2A64D];
 }

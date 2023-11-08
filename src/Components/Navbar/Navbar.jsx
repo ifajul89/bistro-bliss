@@ -1,74 +1,52 @@
+import { Link, NavLink } from "react-router-dom";
+import { MdOutlinePersonOutline } from "react-icons/md";
+import { BiSolidCartAlt } from "react-icons/bi";
+
 const Navbar = () => {
+    const navItems = (
+        <>
+            <li>
+                <NavLink className="hover:text-[#F2A64D] duration-300" to="/">
+                    Home
+                </NavLink>
+            </li>
+            <li>
+                <NavLink
+                    className="hover:text-[#F2A64D] duration-300"
+                    to="/all-items"
+                >
+                    All Items
+                </NavLink>
+            </li>
+            <li>
+                <NavLink
+                    className="hover:text-[#F2A64D] duration-300"
+                    to="/blog"
+                >
+                    Blog
+                </NavLink>
+            </li>
+        </>
+    );
+
     return (
-        <div className="navbar bg-base-100">
-            <div className="navbar-start">
-                <div className="dropdown">
-                    <label tabIndex={0} className="btn btn-ghost lg:hidden">
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            className="h-5 w-5"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                        >
-                            <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth="2"
-                                d="M4 6h16M4 12h8m-8 6h16"
-                            />
-                        </svg>
-                    </label>
-                    <ul
-                        tabIndex={0}
-                        className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
-                    >
-                        <li>
-                            <a>Item 1</a>
-                        </li>
-                        <li>
-                            <a>Parent</a>
-                            <ul className="p-2">
-                                <li>
-                                    <a>Submenu 1</a>
-                                </li>
-                                <li>
-                                    <a>Submenu 2</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a>Item 3</a>
-                        </li>
-                    </ul>
+        <div className="flex justify-around items-center border-4 container mx-auto p-2 my-3 rounded-t-[50px] rounded-b-3xl">
+            <div>
+                <ul className="flex gap-5 font-medium">{navItems}</ul>
+            </div>
+            <div className="flex logo leading-none items-center">
+                <h3 className="text-6xl">B</h3>
+                <div className="text-xl font-semibold leading-none">
+                    <h3>istro</h3>
+                    <h3>liss~</h3>
                 </div>
-                <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
             </div>
-            <div className="navbar-center hidden lg:flex">
-                <ul className="menu menu-horizontal px-1">
-                    <li>
-                        <a>Item 1</a>
-                    </li>
-                    <li tabIndex={0}>
-                        <details>
-                            <summary>Parent</summary>
-                            <ul className="p-2">
-                                <li>
-                                    <a>Submenu 1</a>
-                                </li>
-                                <li>
-                                    <a>Submenu 2</a>
-                                </li>
-                            </ul>
-                        </details>
-                    </li>
-                    <li>
-                        <a>Item 3</a>
-                    </li>
-                </ul>
-            </div>
-            <div className="navbar-end">
-                <a className="btn">Button</a>
+            <div className="flex gap-5 items-center">
+                <BiSolidCartAlt className="text-xl text-[#F2A64D]"></BiSolidCartAlt>
+                <MdOutlinePersonOutline className="text-xl"></MdOutlinePersonOutline>
+                <Link className="text-lg font-medium hover:text-[#F2A64D] duration-300" to="/login">Log In</Link>
+                <span>|</span>
+                <Link className="text-lg font-medium hover:text-[#F2A64D] duration-300" to="/register">Register</Link>
             </div>
         </div>
     );
