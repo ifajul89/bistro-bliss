@@ -1,7 +1,11 @@
+import { useContext } from "react";
 import LogInBg from "../../assets/login.jpg";
-import { MdOutlineCancel } from "react-icons/md";
+import { AuthContext } from "../../Provider/AuthProvider";
+import "./Register.css";
 
 const Register = () => {
+    const { createUser } = useContext(AuthContext);
+
     const handleRegister = (e) => {
         e.preventDefault();
         const form = e.target;
@@ -10,11 +14,20 @@ const Register = () => {
         const email = form.photo.value;
         const password = form.password.value;
         console.log(name, photo, email, password);
+
+        createUser(email, password)
+            .then((result) => {
+                const user = result.user;
+                console.log(user);
+            })
+            .catch((error) => {
+                console.log(error);
+            });
     };
 
     return (
-        <div className="bg-white flex w-5/6 max-w-5xl relative rounded-xl">
-            <div className="w-2/5 p-10 flex flex-col justify-center space-y-5">
+        <div className="register-bg flex w-full rounded-xl container mx-auto">
+            <div className="w-[400px] p-10 flex flex-col justify-center space-y-5">
                 <h3 className="font-bold text-3xl">Welcome User</h3>
                 <p className="font-light">Please Create Your Account</p>
                 <form onSubmit={handleRegister} className="space-y-3">
@@ -65,15 +78,6 @@ const Register = () => {
                     />
                 </form>
             </div>
-            <div className="w-3/5">
-                <img className="w-full rounded-r-xl" src={LogInBg} alt="" />
-            </div>
-
-            <form method="dialog" className="right-3 top-3 absolute">
-                <button className="btn btn-ghost btn-sm p-0">
-                    <MdOutlineCancel className="text-white text-3xl"></MdOutlineCancel>
-                </button>
-            </form>
         </div>
     );
 };

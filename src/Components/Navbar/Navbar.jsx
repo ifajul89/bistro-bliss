@@ -124,35 +124,19 @@ const Navbar = () => {
                 </div>
                 <div className="hidden lg:block">
                     <div className="flex items-center gap-3">
-                        <div>
-                            <button
-                                className="text-lg text-black font-semibold hover:text-pink-700 duration-300"
-                                onClick={() =>
-                                    document
-                                        .getElementById("log-in-modal")
-                                        .showModal()
-                                }
-                            >
-                                Log In
-                            </button>
-                            <dialog id="log-in-modal" className="modal">
-                                <Login></Login>
-                            </dialog>
-                        </div>
-                        <span className="text-lg">|</span>
-                        <button
+                        <Link
+                            to="/login"
                             className="text-lg text-black font-semibold hover:text-pink-700 duration-300"
-                            onClick={() =>
-                                document
-                                    .getElementById("register-modal")
-                                    .showModal()
-                            }
+                        >
+                            Log In
+                        </Link>
+                        <span className="text-lg">|</span>
+                        <Link
+                            to="/register"
+                            className="text-lg text-black font-semibold hover:text-pink-700 duration-300"
                         >
                             Register
-                        </button>
-                        <dialog id="register-modal" className="modal">
-                            <Register></Register>
-                        </dialog>
+                        </Link>
                     </div>
                 </div>
             </div>
