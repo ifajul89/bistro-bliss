@@ -1,6 +1,8 @@
 import { Link, NavLink } from "react-router-dom";
 import DefaultUser from "../../assets/default-user.jpg";
 import { LuMenuSquare } from "react-icons/lu";
+import Login from "../../Pages/LogIn/Login";
+import Register from "../../Pages/Register/Register";
 
 const Navbar = () => {
     const navItems = (
@@ -34,10 +36,7 @@ const Navbar = () => {
                     />
                     <div className="drawer-content">
                         {/* Page content here */}
-                        <label
-                            htmlFor="my-drawer"
-                            className="lg:hidden"
-                        >
+                        <label htmlFor="my-drawer" className="lg:hidden">
                             <LuMenuSquare className="text-pink-700 text-2xl md:text-4xl md:ml-3 mr-3"></LuMenuSquare>
                         </label>
                     </div>
@@ -105,7 +104,7 @@ const Navbar = () => {
                     <h4 className="text-lg md:text-3xl">
                         food
                         <span className="font-black leading-none text-pink-700">
-                             .
+                            .
                         </span>
                     </h4>
                 </Link>
@@ -125,19 +124,35 @@ const Navbar = () => {
                 </div>
                 <div className="hidden lg:block">
                     <div className="flex items-center gap-3">
-                        <Link
-                            to="login"
-                            className="text-lg text-black font-semibold hover:text-pink-700 duration-300"
-                        >
-                            Log In
-                        </Link>
+                        <div>
+                            <button
+                                className="text-lg text-black font-semibold hover:text-pink-700 duration-300"
+                                onClick={() =>
+                                    document
+                                        .getElementById("log-in-modal")
+                                        .showModal()
+                                }
+                            >
+                                Log In
+                            </button>
+                            <dialog id="log-in-modal" className="modal">
+                                <Login></Login>
+                            </dialog>
+                        </div>
                         <span className="text-lg">|</span>
-                        <Link
-                            to="register"
+                        <button
                             className="text-lg text-black font-semibold hover:text-pink-700 duration-300"
+                            onClick={() =>
+                                document
+                                    .getElementById("register-modal")
+                                    .showModal()
+                            }
                         >
                             Register
-                        </Link>
+                        </button>
+                        <dialog id="register-modal" className="modal">
+                            <Register></Register>
+                        </dialog>
                     </div>
                 </div>
             </div>
