@@ -10,7 +10,8 @@ body {
 
 .logo,
 .sidebar-title,
-.header-title {
+.header-title,
+.font-cursive {
     font-family: "Pacifico", cursive;
 }
 
