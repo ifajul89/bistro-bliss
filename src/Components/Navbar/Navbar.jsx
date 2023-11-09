@@ -44,13 +44,13 @@ const Navbar = () => {
                         <HiMenuAlt1 className="text-3xl"></HiMenuAlt1>
                     </label>
                 </div>
-                <div className="flex logo flex-1 justify-start lg:justify-center leading-none items-center">
+                <Link to="/" className="flex logo flex-1 justify-start lg:justify-center leading-none items-center">
                     <h3 className="text-3xl md:text-6xl">B</h3>
                     <div className="text-sm md:text-xl font-semibold leading-none">
                         <h3>istro</h3>
                         <h3>liss~</h3>
                     </div>
-                </div>
+                </Link>
                 <div className="flex gap-5 items-center">
                     <BiSolidCartAlt className="text-xl text-[#F2A64D]"></BiSolidCartAlt>
                     <MdOutlinePersonOutline className="text-xl"></MdOutlinePersonOutline>
