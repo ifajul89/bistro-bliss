@@ -32,7 +32,7 @@ const ServingCustomer = () => {
                                 <h3 className="text-3xl lg:text-5xl font-semibold text-[#F2A64D]">
                                     30+
                                 </h3>
-                                <p className="font-medium text-sm lg:text-base text-gray-600">
+                                <p className="font-medium text-xs sm:text-sm lg:text-base text-gray-600">
                                     BREAKFAST
                                     <br />
                                     OPTIONS
@@ -42,7 +42,7 @@ const ServingCustomer = () => {
                                 <h3 className="text-3xl lg:text-5xl font-semibold text-[#F2A64D]">
                                     50+
                                 </h3>
-                                <p className="font-medium text-sm lg:text-base text-gray-600">
+                                <p className="font-medium text-xs sm:text-sm lg:text-base text-gray-600">
                                     DINNER
                                     <br />
                                     OPTIONS
@@ -52,7 +52,7 @@ const ServingCustomer = () => {
                                 <h3 className="text-3xl lg:text-5xl font-semibold text-[#F2A64D]">
                                     8+
                                 </h3>
-                                <p className="font-medium text-sm lg:text-base text-gray-600">
+                                <p className="font-medium text-xs sm:text-sm lg:text-base text-gray-600">
                                     NEW
                                     <br />
                                     LOCATION
@@ -69,7 +69,7 @@ const ServingCustomer = () => {
             <div className="flex justify-center p-3 md:p-10">
                 <div className="grid grid-cols-4 gap-5 md:gap-10 text-center">
                     <div>
-                        <h3 className=" text-xl lg:text-4xl font-semibold text-[#F2A64D]">
+                        <h3 className=" text-xl md:text-6xl font-semibold text-[#F2A64D]">
                             26
                         </h3>
                         <p className="font-medium text-[10px] sm:text-sm lg:text-base text-gray-600">
@@ -77,19 +77,19 @@ const ServingCustomer = () => {
                         </p>
                     </div>
                     <div>
-                        <h3 className=" text-xl lg:text-4xl font-semibold text-[#F2A64D]">
+                        <h3 className=" text-xl md:text-6xl font-semibold text-[#F2A64D]">
                             100
                         </h3>
                         <p className="font-medium text-[10px] sm:text-sm lg:text-base text-gray-600">MENU/DISH</p>
                     </div>
                     <div>
-                        <h3 className=" text-xl lg:text-4xl font-semibold text-[#F2A64D]">
+                        <h3 className=" text-xl md:text-6xl font-semibold text-[#F2A64D]">
                             50
                         </h3>
                         <p className="font-medium text-[10px] sm:text-sm lg:text-base text-gray-600">STAFFS</p>
                     </div>
                     <div>
-                        <h3 className=" text-xl lg:text-4xl font-semibold text-[#F2A64D]">
+                        <h3 className=" text-xl md:text-6xl font-semibold text-[#F2A64D]">
                             15,000
                         </h3>
                         <p className="font-medium text-[10px] sm:text-sm lg:text-base text-gray-600">
