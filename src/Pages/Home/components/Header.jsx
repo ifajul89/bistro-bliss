@@ -14,8 +14,8 @@ const Header = () => {
                     </div>
                 </div>
             </div>
-            <div className="header-image order-1 md:order-2 col-span-10 md:col-span-6 rounded-full">
-                <div className="w-full h-full bg-black bg-opacity-50 text-white text-center header-title md:py-16 py-5 lg:py-28 xl:py-36 px-10 md:p-12 lg:p-20 text-3xl sm:text-6xl rounded-full">
+            <div className="header-image order-1 md:order-2 col-span-10 md:col-span-6 rounded-3xl">
+                <div className="w-full h-full bg-black bg-opacity-50 text-white text-center header-title md:py-16 py-5 lg:py-28 xl:py-36 px-10 md:p-12 lg:p-20 text-3xl sm:text-6xl rounded-3xl">
                     <h3 className="text-lg font-light">Welcome to,</h3>
                     <h2 className="my-1 sm:my-5">Bistro Bliss</h2>
                     <p className="text-xs sm:text-sm md:text-base lg:text-lg">

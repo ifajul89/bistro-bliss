@@ -46,7 +46,7 @@ const Navbar = () => {
 
     return (
         <div className="container mx-auto">
-            <div className="flex justify-around items-center mx-3 md:mx-0 border-4 p-2 my-3 rounded-full px-3 md:px-10">
+            <div className="flex justify-around items-center mx-3 md:mx-0 border-4 my-3 rounded-full px-3 md:px-10">
                 <div className="flex items-center">
                     <ul className="hidden lg:flex gap-5 font-medium">
                         {navItems}
