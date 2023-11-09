@@ -1,9 +1,11 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import RegisterBg from "../../assets/register.jpg";
 
 const Register = () => {
     const { createUser } = useContext(AuthContext);
+    const [error, setError] = useState("");
+    const [success, setSuccess] = useState("");
 
     const handleRegister = (e) => {
         e.preventDefault();
@@ -13,13 +15,63 @@ const Register = () => {
         const email = form.email.value;
         const password = form.password.value;
         console.log(name, photo, email, password);
+        setError("");
+        setSuccess("");
+
+        // Validation
+        // Name Validation
+        if (name.length < 3) {
+            setError("Please Enter a Valid Name");
+            return;
+        }
+
+        // Photo Url Validation
+        const urlRegex =
+            /^(?:https?):\/\/(\w+:? \w*)?(\S+)(:\d+)?(\/|\/([\w#!:.?+= &%! \-/]))?$/;
+        if (urlRegex.test(photo) === false) {
+            setError("Please Enter a valid Photo URL");
+            return;
+        }
+
+        // Email Validation
+        const emailRegex =
+            /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+        if (emailRegex.test(email) === false) {
+            setError("Please Enter a Valid Email Address");
+        }
+
+        // Password Validation
+        if (password.length < 8) {
+            setError("Password Must Have at least 8 Characters");
+            return;
+        }
+
+        const smallLetter = /^(?=.*[a-z]).+$/;
+        if (smallLetter.test(password) === false) {
+            setError("Password Must Have a Small Letter");
+            return;
+        }
+
+        const capitalLetter = /^(?=.*[A-Z]).+$/;
+        if (capitalLetter.test(password) === false) {
+            setError("Password Must Have a Capital Letter");
+            return;
+        }
+
+        const specialCharacterRegex = /[!@#$%^&*()_+{}[\]:;<>,.?~\\-]/;
+        if (specialCharacterRegex.test(password) === false) {
+            setError("Password Must Have A Special Character");
+            return;
+        }
 
         createUser(email, password)
             .then((result) => {
-                console.log(result);
+                if (result.user) {
+                    setSuccess("User Created Successfully");
+                }
             })
             .catch((error) => {
-                console.log(error);
+                setError(error.message);
             });
     };
 
@@ -97,8 +149,24 @@ const Register = () => {
                             required
                         />
                     </div>
+                    <div className="mt-4">
+                        {error ? (
+                            <p className="text-red-600 font-semibold">
+                                {error}
+                            </p>
+                        ) : (
+                            ""
+                        )}
+                        {success ? (
+                            <p className="text-green-600 font-semibold">
+                                {success}
+                            </p>
+                        ) : (
+                            ""
+                        )}
+                    </div>
                     <div className="mt-4 flex items-center gap-1">
-                        <input type="checkbox" name="" id="" />
+                        <input type="checkbox" name="" id="" required />
                         <h3>
                             I Accept The{" "}
                             <a className="underline text-[#F2A64D]" href="#">
