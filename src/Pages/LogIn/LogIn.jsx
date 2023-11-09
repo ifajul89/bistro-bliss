@@ -94,10 +94,10 @@ const Register = () => {
                 <h3 className="font-cursive hidden md:inline-block font-light text-lg text-gray-500">
                     Hello User,
                 </h3>
-                <h4 className="font-cursive font bold text-2xl lg:text-4xl text-center">
+                <h4 className="font-cursive font bold sm:text-2xl lg:text-4xl text-center">
                     Please Register
                 </h4>
-                <h4 className="font-cursive font bold text-2xl lg:text-4xl text-center text-[#F2A64D]">
+                <h4 className="font-cursive font bold sm:text-2xl lg:text-4xl text-center text-[#F2A64D]">
                     Bon Appétit
                 </h4>
             </div>

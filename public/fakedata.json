@@ -1,0 +1,68 @@
+[
+    {
+        "food_name": "Spaghetti Carbonara",
+        "image": "/src/assets/register.jpg",
+        "category": "Pasta",
+        "price": "12.99"
+    },
+    {
+        "food_name": "Margherita Pizza",
+        "image": "/src/assets/register.jpg",
+        "category": "Pizza",
+        "price": "9.99"
+    },
+    {
+        "food_name": "Caesar Salad",
+        "image": "/src/assets/register.jpg",
+        "category": "Salad",
+        "price": "7.49"
+    },
+    {
+        "food_name": "Chicken Tacos",
+        "image": "/src/assets/register.jpg",
+        "category": "Mexican",
+        "price": "8.99"
+    },
+    {
+        "food_name": "Sushi Combo",
+        "image": "/src/assets/register.jpg",
+        "category": "Japanese",
+        "price": "15.99"
+    },
+    {
+        "food_name": "Burger Deluxe",
+        "image": "/src/assets/register.jpg",
+        "category": "Burger",
+        "price": "11.49"
+    },
+    {
+        "food_name": "Mango Smoothie",
+        "image": "/src/assets/register.jpg",
+        "category": "Beverage",
+        "price": "4.99"
+    },
+    {
+        "food_name": "Chicken Curry",
+        "image": "/src/assets/register.jpg",
+        "category": "Indian",
+        "price": "10.99"
+    },
+    {
+        "food_name": "BBQ Ribs",
+        "image": "/src/assets/register.jpg",
+        "category": "Barbecue",
+        "price": "13.49"
+    },
+    {
+        "food_name": "Vegetable Stir-Fry",
+        "image": "/src/assets/register.jpg",
+        "category": "Asian",
+        "price": "9.49"
+    },
+    {
+        "food_name": "Fish and Chips",
+        "image": "/src/assets/register.jpg",
+        "category": "Seafood",
+        "price": "12.99"
+    }
+]

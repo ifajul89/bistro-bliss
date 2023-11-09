@@ -174,23 +174,37 @@ const Navbar = () => {
                                         </NavLink>
                                     </li>
                                     <div className="h-[1px] w-full bg-slate-300"></div>
-                                    <li>
-                                        <NavLink
-                                            className="font-medium hover:text-[#F2A64D] duration-300"
-                                            to="/login"
-                                        >
-                                            Log In
-                                        </NavLink>
-                                    </li>
-                                    <div className="h-[1px] w-full bg-slate-300"></div>
-                                    <li>
-                                        <NavLink
-                                            className="font-medium hover:text-[#F2A64D] duration-300"
-                                            to="/register"
-                                        >
-                                            Register
-                                        </NavLink>
-                                    </li>
+                                    {user ? (
+                                        <li>
+                                            <button
+                                                onClick={handleLogOut}
+                                                className="font-medium hover:text-[#F2A64D] duration-300"
+                                                to="/login"
+                                            >
+                                                Log Out
+                                            </button>
+                                        </li>
+                                    ) : (
+                                        <>
+                                            <li>
+                                                <NavLink
+                                                    className="font-medium hover:text-[#F2A64D] duration-300"
+                                                    to="/login"
+                                                >
+                                                    Log In
+                                                </NavLink>
+                                            </li>
+                                            <div className="h-[1px] w-full bg-slate-300"></div>
+                                            <li>
+                                                <NavLink
+                                                    className="font-medium hover:text-[#F2A64D] duration-300"
+                                                    to="/register"
+                                                >
+                                                    Register
+                                                </NavLink>
+                                            </li>
+                                        </>
+                                    )}
                                     <div className="h-[1px] w-full bg-slate-300"></div>
                                 </div>
                             </ul>
