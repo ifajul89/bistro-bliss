@@ -44,7 +44,10 @@ const Navbar = () => {
                         <HiMenuAlt1 className="text-3xl"></HiMenuAlt1>
                     </label>
                 </div>
-                <Link to="/" className="flex logo flex-1 justify-start lg:justify-center leading-none items-center">
+                <Link
+                    to="/"
+                    className="flex logo flex-1 justify-start lg:justify-center leading-none items-center"
+                >
                     <h3 className="text-3xl md:text-6xl">B</h3>
                     <div className="text-sm md:text-xl font-semibold leading-none">
                         <h3>istro</h3>
@@ -53,7 +56,22 @@ const Navbar = () => {
                 </Link>
                 <div className="flex gap-5 items-center">
                     <BiSolidCartAlt className="text-xl text-[#F2A64D]"></BiSolidCartAlt>
-                    <MdOutlinePersonOutline className="text-xl"></MdOutlinePersonOutline>
+                    <div className="dropdown dropdown-bottom dropdown-end">
+                        <label tabIndex={0} className="m-1">
+                            <MdOutlinePersonOutline className="text-xl"></MdOutlinePersonOutline>
+                        </label>
+                        <ul
+                            tabIndex={0}
+                            className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-40"
+                        >
+                            <li>
+                                <Link to="/add-food">Add a food</Link>
+                            </li>
+                            <li>
+                                <Link>My added food </Link>
+                            </li>
+                        </ul>
+                    </div>
                     <div className="hidden lg:flex items-center gap-5">
                         <Link
                             className="text-lg font-medium hover:text-[#F2A64D] duration-300"
