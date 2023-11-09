@@ -1,5 +1,4 @@
 import { useContext } from "react";
-import "./Register.css";
 import { AuthContext } from "../../Provider/AuthProvider";
 import RegisterBg from "../../assets/register.jpg";
 
@@ -14,6 +13,8 @@ const Register = () => {
         const email = form.email.value;
         const password = form.password.value;
         console.log(name, photo, email, password);
+
+
 
         createUser(email, password)
             .then((result) => {

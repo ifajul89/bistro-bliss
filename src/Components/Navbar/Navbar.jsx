@@ -32,7 +32,7 @@ const Navbar = () => {
 
     return (
         <div className="container mx-auto">
-            <div className="flex justify-around items-center mx-3 md:mx-0 border-4 p-2 my-3 rounded-t-[50px] rounded-b-3xl px-3 md:px-10">
+            <div className="flex justify-around items-center mx-3 md:mx-0 border-4 p-2 my-3 rounded-full px-3 md:px-10">
                 <div className="flex items-center">
                     <ul className="hidden lg:flex gap-5 font-medium">
                         {navItems}
@@ -48,7 +48,7 @@ const Navbar = () => {
                     to="/"
                     className="flex logo flex-1 justify-start lg:justify-center leading-none items-center"
                 >
-                    <h3 className="text-3xl md:text-6xl">B</h3>
+                    <h3 className="text-3xl md:text-6xl text-[#F2A64D]">B</h3>
                     <div className="text-sm md:text-xl font-semibold leading-none">
                         <h3>istro</h3>
                         <h3>liss~</h3>
