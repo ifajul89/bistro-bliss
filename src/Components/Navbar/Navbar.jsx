@@ -2,8 +2,22 @@ import { Link, NavLink } from "react-router-dom";
 import { MdOutlinePersonOutline } from "react-icons/md";
 import { BiSolidCartAlt } from "react-icons/bi";
 import { HiMenuAlt1 } from "react-icons/hi";
+import { useContext } from "react";
+import { AuthContext } from "../../Provider/AuthProvider";
 
 const Navbar = () => {
+    const { user, logOut } = useContext(AuthContext);
+
+    const handleLogOut = () => {
+        logOut()
+            .then((result) => {
+                console.log(result);
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    };
+
     const navItems = (
         <>
             <li>
@@ -58,7 +72,15 @@ const Navbar = () => {
                     <BiSolidCartAlt className="text-xl text-[#F2A64D]"></BiSolidCartAlt>
                     <div className="dropdown dropdown-bottom dropdown-end">
                         <label tabIndex={0} className="m-1">
-                            <MdOutlinePersonOutline className="text-xl"></MdOutlinePersonOutline>
+                            {user ? (
+                                <img
+                                    className="rounded-full w-10 border-2"
+                                    src={user.photoURL}
+                                    alt=""
+                                />
+                            ) : (
+                                <MdOutlinePersonOutline className="text-xl"></MdOutlinePersonOutline>
+                            )}
                         </label>
                         <ul
                             tabIndex={0}
@@ -73,19 +95,34 @@ const Navbar = () => {
                         </ul>
                     </div>
                     <div className="hidden lg:flex items-center gap-5">
-                        <Link
-                            className="text-lg font-medium hover:text-[#F2A64D] duration-300"
-                            to="/login"
-                        >
-                            Log In
-                        </Link>
-                        <span>|</span>
-                        <Link
-                            className="text-lg font-medium hover:text-[#F2A64D] duration-300"
-                            to="/register"
-                        >
-                            Register
-                        </Link>
+                        {user ? (
+                            <>
+                                <span>|</span>
+                                <button
+                                    onClick={handleLogOut}
+                                    className="text-lg font-medium hover:text-[#F2A64D] duration-300"
+                                    to="/login"
+                                >
+                                    Log Out
+                                </button>
+                            </>
+                        ) : (
+                            <>
+                                <Link
+                                    className="text-lg font-medium hover:text-[#F2A64D] duration-300"
+                                    to="/login"
+                                >
+                                    Log In
+                                </Link>
+                                <span>|</span>
+                                <Link
+                                    className="text-lg font-medium hover:text-[#F2A64D] duration-300"
+                                    to="/register"
+                                >
+                                    Register
+                                </Link>
+                            </>
+                        )}
                     </div>
                 </div>
                 <div>
