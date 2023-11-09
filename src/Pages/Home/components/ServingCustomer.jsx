@@ -3,7 +3,7 @@ import ServingCustomer2 from "../../../assets/servingCustomer2.jpg";
 
 const ServingCustomer = () => {
     return (
-        <div className="container mx-auto py-5 md:py-10">
+        <div className="container mx-auto py-5 md:py-10 px-3 md:px-0">
             <div className="border-4 p-5 md:p-10 lg:p-20 rounded-b-3xl rounded-t-[50px] grid grid-cols-5 gap-10">
                 <div className="col-span-5 md:col-span-2 gap-10 flex flex-col items-center">
                     <h3 className="py-3 px-4  md:text-base lg:text-lg font-cursive semibold bg-white rounded-2xl border-4 inline-block ">
@@ -32,7 +32,7 @@ const ServingCustomer = () => {
                                 <h3 className="text-3xl lg:text-5xl font-semibold text-[#F2A64D]">
                                     30+
                                 </h3>
-                                <p className="font-medium text-xs sm:text-sm lg:text-base text-gray-600">
+                                <p className="font-medium text-[10px] sm:text-sm lg:text-base text-gray-600">
                                     BREAKFAST
                                     <br />
                                     OPTIONS
@@ -42,7 +42,7 @@ const ServingCustomer = () => {
                                 <h3 className="text-3xl lg:text-5xl font-semibold text-[#F2A64D]">
                                     50+
                                 </h3>
-                                <p className="font-medium text-xs sm:text-sm lg:text-base text-gray-600">
+                                <p className="font-medium text-[10px] sm:text-sm lg:text-base text-gray-600">
                                     DINNER
                                     <br />
                                     OPTIONS
@@ -52,7 +52,7 @@ const ServingCustomer = () => {
                                 <h3 className="text-3xl lg:text-5xl font-semibold text-[#F2A64D]">
                                     8+
                                 </h3>
-                                <p className="font-medium text-xs sm:text-sm lg:text-base text-gray-600">
+                                <p className="font-medium text-[10px] sm:text-sm lg:text-base text-gray-600">
                                     NEW
                                     <br />
                                     LOCATION

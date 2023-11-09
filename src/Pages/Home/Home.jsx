@@ -1,4 +1,5 @@
 import Header from "./components/Header";
+import OurMasterChef from "./components/OurMasterChef";
 import ServingCustomer from "./components/ServingCustomer";
 
 const Home = () => {
@@ -6,6 +7,7 @@ const Home = () => {
         <div>
             <Header></Header>
             <ServingCustomer></ServingCustomer>
+            <OurMasterChef></OurMasterChef>
         </div>
     );
 };
