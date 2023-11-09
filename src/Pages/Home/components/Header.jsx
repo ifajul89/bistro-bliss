@@ -22,6 +22,7 @@ const Header = () => {
                         Savor exquisite flavors at Bistro Bliss, where every
                         dish is a culinary masterpiece. Our cozy ambiance and
                         expertly crafted menu ensure a delightful dining
+                        {/* eslint-disable-next-line react/no-unescaped-entities */}
                         experience that's simply blissful
                     </p>
                 </div>
