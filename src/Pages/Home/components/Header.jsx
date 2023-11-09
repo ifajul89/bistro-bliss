@@ -15,9 +15,15 @@ const Header = () => {
                 </div>
             </div>
             <div className="header-image order-1 md:order-2 col-span-10 md:col-span-6 rounded-full">
-                <div className="w-full h-full bg-black bg-opacity-50 text-white text-center header-title md:py-28 py-10 lg:py-44 text-3xl sm:text-6xl rounded-full">
+                <div className="w-full h-full bg-black bg-opacity-50 text-white text-center header-title md:py-16 py-7 lg:py-28 xl:py-36 p-7 md:p-12 lg:p-20 text-3xl sm:text-6xl rounded-full">
                     <h3 className="text-lg font-light">Welcome to,</h3>
-                    <h2>Bistro Bliss</h2>
+                    <h2 className="my-1 sm:my-5">Bistro Bliss</h2>
+                    <p className="text-xs sm:text-sm md:text-base lg:text-lg">
+                        Savor exquisite flavors at Bistro Bliss, where every
+                        dish is a culinary masterpiece. Our cozy ambiance and
+                        expertly crafted menu ensure a delightful dining
+                        experience that's simply blissful
+                    </p>
                 </div>
             </div>
             <div className=" col-span-5 md:col-span-2 order-3 flex gap-5 flex-col items-center">
