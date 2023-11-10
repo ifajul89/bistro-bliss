@@ -20,8 +20,9 @@ const AllItems = () => {
 
     return (
         <div className="container mx-auto">
-            <div>{foods.length}</div>
-
+            <h3 className="py-3 px-4  md:text-base lg:text-lg font-cursive font-semibold bg-white rounded-2xl border-4 text-center ">
+                ALL ITEMS
+            </h3>
             <div className="grid grid-cols-3 gap-5">
                 {foods.map((food) => (
                     <SingleItem key={food._id} food={food}></SingleItem>

@@ -3,14 +3,20 @@ import PropTypes from "prop-types";
 const SingleItem = ({ food }) => {
     const { image, foodName, category, price, quantity } = food;
     return (
-        <div className="border-2 rounded-3xl p-5">
+        <div className="border-4 rounded-3xl p-5 space-y-5 my-5">
             <img className="rounded-2xl" src={image} alt="" />
-            <div>
-                <h3>{foodName}</h3>
-                <h3>{category}</h3>
-                <h3>{price}</h3>
-                <h3>{quantity}</h3>
-                <button className="btn">Details</button>
+            <div className="space-y-2">
+                <h3 className="text-2xl font-semibold">{foodName}</h3>
+                <h3 className="text-lg inline-block px-2 rounded-full text-white bg-gray-400">
+                    {category}
+                </h3>
+                <h3 className="text-xl font-semibold">
+                    Price:<span className="text-[#F2A64D]"> {price} $</span>
+                </h3>
+                <h3 className="font-light text-lg">Quantity: {quantity}</h3>
+                <button className="btn btn-sm bg-[#F2A64D] text-white hover:bg-[#F2A64D] border-0">
+                    See Details
+                </button>
             </div>
         </div>
     );
