@@ -1,9 +1,10 @@
 import { useContext, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import RegisterBg from "../../assets/register.jpg";
+import { FcGoogle } from "react-icons/fc";
 
 const Register = () => {
-    const { createUser, googleSignIn } = useContext(AuthContext);
+    const { signInUser, googleSignIn } = useContext(AuthContext);
     const [error, setError] = useState("");
     const [success, setSuccess] = useState("");
 
@@ -12,25 +13,11 @@ const Register = () => {
         const form = e.target;
         const email = form.email.value;
         const password = form.password.value;
-        console.log( email, password);
+        console.log(email, password);
         setError("");
         setSuccess("");
 
         // Validation
-        // Name Validation
-        if (name.length < 3) {
-            setError("Please Enter a Valid Name");
-            return;
-        }
-
-        // Photo Url Validation
-        const urlRegex =
-            /^(?:https?):\/\/(\w+:? \w*)?(\S+)(:\d+)?(\/|\/([\w#!:.?+= &%! \-/]))?$/;
-        if (urlRegex.test(photo) === false) {
-            setError("Please Enter a valid Photo URL");
-            return;
-        }
-
         // Email Validation
         const emailRegex =
             /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
@@ -62,7 +49,7 @@ const Register = () => {
             return;
         }
 
-        createUser(email, password)
+        signInUser(email, password)
             .then((result) => {
                 if (result.user) {
                     setSuccess("User Created Successfully");
@@ -93,7 +80,7 @@ const Register = () => {
                     Hello User,
                 </h3>
                 <h4 className="font-cursive font bold sm:text-2xl lg:text-4xl text-center">
-                    Please Register
+                    Please Log In
                 </h4>
                 <h4 className="font-cursive font bold sm:text-2xl lg:text-4xl text-center text-[#F2A64D]">
                     Bon Appétit
@@ -101,34 +88,6 @@ const Register = () => {
             </div>
             <div className="bg-white border-4 md:w-2/3 rounded-3xl p-3 md:p-5 lg:p-10">
                 <form onSubmit={handleRegister} className="">
-                    <div className="form-control">
-                        <label className="label">
-                            <span className="label-text text-gray-600">
-                                Name
-                            </span>
-                        </label>
-                        <input
-                            type="text"
-                            name="name"
-                            placeholder="Type Your Name"
-                            className="input rounded-full focus:outline-none bg-gray-100"
-                            required
-                        />
-                    </div>
-                    <div className="form-control">
-                        <label className="label">
-                            <span className="label-text text-gray-600">
-                                Photo
-                            </span>
-                        </label>
-                        <input
-                            type="text"
-                            name="photo"
-                            placeholder="Enter Photo URL"
-                            className="input rounded-full focus:outline-none bg-gray-100"
-                            required
-                        />
-                    </div>
                     <div className="form-control">
                         <label className="label">
                             <span className="label-text text-gray-600">
@@ -190,8 +149,16 @@ const Register = () => {
                         />
                     </div>
                 </form>
-                <button onClick={handleGoogleSignIn}>
-                    Continue With Google
+                <div className="flex gap-2 items-center my-6">
+                    <div className="h-[2px] w-full bg-slate-300 rounded-full"></div>
+                    <h3 className="text-slate-400 text-lg font-medium">Or,</h3>
+                    <div className="h-[2px] w-full bg-slate-300 rounded-full"></div>
+                </div>
+                <button
+                    className="btn rounded-full w-full"
+                    onClick={handleGoogleSignIn}
+                >
+                    <FcGoogle></FcGoogle>Continue With Google
                 </button>
             </div>
         </div>
