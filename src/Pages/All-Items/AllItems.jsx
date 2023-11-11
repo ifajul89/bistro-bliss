@@ -1,9 +1,12 @@
 import { useQuery } from "@tanstack/react-query";
 import SingleItem from "./SingleItem/SingleItem";
-import { useEffect } from "react";
-import axios from "axios";
+import { useEffect, useState } from "react";
+// import { useEffect } from "react";
+// import axios from "axios";
 
 const AllItems = () => {
+    const [dataCount, setDataCount] = useState();
+
     const { isPending, data: foods } = useQuery({
         queryKey: ["foods"],
         queryFn: async () => {
@@ -12,21 +15,19 @@ const AllItems = () => {
         },
     });
 
-    const { data: dataCount } = useQuery({
-        queryKey: ["dataCount"],
-        queryFn: async () => {
-            const res = await fetch("http://localhost:5000/foods-count");
-            return res.json();
-        },
-    });
+    // useEffect(() => {
+    //     fetch("http:localhost:5000/foods-count")
+    // .then((res) => res.json())
+    // .then((data) => setDataCount(data));
+    // }, []);
 
-    console.log(dataCount);
+    // console.log(dataCount);
 
-    const itemsPerPage = 9;
-    const numberOfPages = dataCount / itemsPerPage;
-    const pagesNumber = [...Array(numberOfPages).keys()];
+    // const itemsPerPage = 9;
+    // const numberOfPages = dataCount / itemsPerPage;
+    // const pagesNumber = [...Array(numberOfPages).keys()];
 
-    console.log(pagesNumber);
+    // console.log(pagesNumber);
 
     if (isPending) {
         return (
@@ -47,5 +48,6 @@ const AllItems = () => {
         </div>
     );
 };
+
 
 export default AllItems;

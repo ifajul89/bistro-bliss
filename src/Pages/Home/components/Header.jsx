@@ -1,13 +1,17 @@
 import { RiMenuSearchFill } from "react-icons/ri";
 import { GiForkKnifeSpoon } from "react-icons/gi";
+import { Link } from "react-router-dom";
 
 const Header = () => {
     return (
         <div className="grid grid-cols-10 gap-5 container mx-auto my-5 md:my-10 px-3 md:px-0">
             <div className="col-span-5 md:col-span-2 order-2 md:order-1 flex gap-5 flex-col items-center">
-                <button className="btn rounded-full hover:bg-white hover:shadow-gray-400 shadow-gray-300 shadow-lg bg-white">
+                <Link
+                    to="/all-items"
+                    className="btn rounded-full hover:bg-white hover:shadow-gray-400 shadow-gray-300 shadow-lg bg-white"
+                >
                     Book A Table
-                </button>
+                </Link>
                 <div className="border-4 h-full w-full border-[#2F2F2F] rounded-full p-2">
                     <div className="border-4 aspect-square flex items-center justify-center border-[#2F2F2F] rounded-full">
                         <RiMenuSearchFill className="text-5xl"></RiMenuSearchFill>
@@ -33,9 +37,12 @@ const Header = () => {
                         <GiForkKnifeSpoon className="text-5xl"></GiForkKnifeSpoon>
                     </div>
                 </div>
-                <button className="btn rounded-full hover:bg-white hover:shadow-gray-400 shadow-gray-300 shadow-lg bg-white">
+                <Link
+                    to="/all-items"
+                    className="btn rounded-full hover:bg-white hover:shadow-gray-400 shadow-gray-300 shadow-lg bg-white"
+                >
                     See Full Menu
-                </button>
+                </Link>
             </div>
         </div>
     );

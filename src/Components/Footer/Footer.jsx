@@ -16,14 +16,16 @@ const Footer = () => {
                         Providing reliable food since 1992
                     </p>
                     <p>
+                        {/* eslint-disable-next-line react/no-unescaped-entities */}
                         Copyright © 2023 - All right reserved to "
                         <a
-                            className="font-semibold hover:underline duration-300 hover:text-[#F2A64D] duration-300"
+                            className="font-semibold hover:underline duration-300 hover:text-[#F2A64D]"
                             href="https://github.com/bluebird089"
                         >
                             {/* eslint-disable-next-line react/no-unescaped-entities */}
                             bluebird089
                         </a>
+                        {/* eslint-disable-next-line react/no-unescaped-entities */}
                         "
                     </p>
                 </aside>
