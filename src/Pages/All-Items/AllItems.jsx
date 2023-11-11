@@ -1,11 +1,19 @@
 import { useQuery } from "@tanstack/react-query";
 import SingleItem from "./SingleItem/SingleItem";
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
+import { useLoaderData } from "react-router-dom";
+import { useState } from "react";
+// import { useState } from "react";
 // import { useEffect } from "react";
 // import axios from "axios";
 
 const AllItems = () => {
-    const [dataCount, setDataCount] = useState();
+    // const [dataCount, setDataCount] = useState(0);
+
+    const { count } = useLoaderData();
+    const [currentPage, setCurrentPage] = useState(0);
+
+    console.log(count);
 
     const { isPending, data: foods } = useQuery({
         queryKey: ["foods"],
@@ -15,19 +23,13 @@ const AllItems = () => {
         },
     });
 
-    // useEffect(() => {
-    //     fetch("http:localhost:5000/foods-count")
-    // .then((res) => res.json())
-    // .then((data) => setDataCount(data));
-    // }, []);
+    const itemsPerPage = 9;
+    const numberOfPages = Math.ceil(count / itemsPerPage);
+    const pagesNumber = [...Array(numberOfPages).keys()];
 
-    // console.log(dataCount);
-
-    // const itemsPerPage = 9;
-    // const numberOfPages = dataCount / itemsPerPage;
-    // const pagesNumber = [...Array(numberOfPages).keys()];
-
-    // console.log(pagesNumber);
+    const handleSetCurrentPage = (pageNumber) => {
+        setCurrentPage(pageNumber);
+    };
 
     if (isPending) {
         return (
@@ -45,9 +47,20 @@ const AllItems = () => {
                     <SingleItem key={food._id} food={food}></SingleItem>
                 ))}
             </div>
+            <p>{currentPage}</p>
+            <div className="flex justify-center gap-2 mb-5">
+                {pagesNumber.map((pageNumber) => (
+                    <button
+                        key={pageNumber}
+                        onClick={() => handleSetCurrentPage(pageNumber)}
+                        className="btn btn-sm btn-circle border-0 bg-[#F2A64D] text-white flex justify-center items-center hover:bg-[#aa7436]"
+                    >
+                        {pageNumber + 1}
+                    </button>
+                ))}
+            </div>
         </div>
     );
 };
-
 
 export default AllItems;
