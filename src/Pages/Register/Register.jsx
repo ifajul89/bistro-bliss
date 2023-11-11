@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import RegisterBg from "../../assets/register.jpg";
+import { Link } from "react-router-dom";
 
 const Register = () => {
     const { createUser } = useContext(AuthContext);
@@ -182,6 +183,15 @@ const Register = () => {
                         />
                     </div>
                 </form>
+                <h3 className="font-medium text-sm sm:text-base text-center mt-6">
+                    Have an account? Please{" "}
+                    <Link
+                        to="/login"
+                        className="text-[#F2A64D] font-semibold hover:underline duration-300"
+                    >
+                        Log In
+                    </Link>
+                </h3>
             </div>
         </div>
     );

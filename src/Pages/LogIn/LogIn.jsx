@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import RegisterBg from "../../assets/register.jpg";
 import { FcGoogle } from "react-icons/fc";
+import { Link } from "react-router-dom";
 
 const Register = () => {
     const { signInUser, googleSignIn } = useContext(AuthContext);
@@ -160,6 +161,15 @@ const Register = () => {
                 >
                     <FcGoogle></FcGoogle>Continue With Google
                 </button>
+                <h3 className="font-medium text-sm sm:text-base text-center mt-6">
+                    Are you new here? Please{" "}
+                    <Link
+                        to="/register"
+                        className="text-[#F2A64D] font-semibold hover:underline duration-300"
+                    >
+                        Register
+                    </Link>
+                </h3>
             </div>
         </div>
     );
