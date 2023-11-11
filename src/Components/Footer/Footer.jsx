@@ -1,10 +1,10 @@
 const Footer = () => {
     return (
         <div>
-            <footer className="footer bg-[#2F2F2F] footer-center p-10 text-primary-content">
+            <footer className="footer bg-[#2F2F2F] text-white footer-center p-10">
                 <aside>
                     <div className="flex my-3 logo flex-1 justify-start lg:justify-center leading-none items-center">
-                        <h3 className="text-6xl">B</h3>
+                        <h3 className="text-6xl text-[#F2A64D]">B</h3>
                         <div className="text-xl font-semibold leading-none">
                             <h3>istro</h3>
                             <h3>liss~</h3>
@@ -16,14 +16,15 @@ const Footer = () => {
                         Providing reliable food since 1992
                     </p>
                     <p>
-                        Copyright © 2023 - All right reserved to{" "}
+                        Copyright © 2023 - All right reserved to "
                         <a
-                            className="font-semibold hover:underline duration-300"
+                            className="font-semibold hover:underline duration-300 hover:text-[#F2A64D] duration-300"
                             href="https://github.com/bluebird089"
                         >
                             {/* eslint-disable-next-line react/no-unescaped-entities */}
-                            "bluebird089"
+                            bluebird089
                         </a>
+                        "
                     </p>
                 </aside>
                 <nav>
