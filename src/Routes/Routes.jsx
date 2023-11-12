@@ -2,7 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import ErrorPage from "../Pages/Error/ErrorPage";
 import Home from "../Pages/Home/Home";
 import Root from "../Layout/Root";
-import Login from "../Pages/LogIn/Login";
+import Login from "../Pages/LogIn/LogIn";
 import Register from "../Pages/Register/Register";
 import AllItems from "../Pages/All-Items/AllItems";
 import Blog from "../Pages/Blog/Blog";
@@ -33,12 +33,10 @@ const router = createBrowserRouter([
                     fetch(`http://localhost:5000/foods/${params.id}`),
             },
             {
-                path: "purchase",
-                element: (
-                    <PrivateRoute>
-                        <PurchasePage></PurchasePage>
-                    </PrivateRoute>
-                ),
+                path: "/purchase/:id",
+                element: <PrivateRoute><PurchasePage></PurchasePage></PrivateRoute>,
+                loader: ({ params }) =>
+                    fetch(`http://localhost:5000/foods/${params.id}`),
             },
             {
                 path: "/blog",

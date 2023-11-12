@@ -2,6 +2,7 @@ import { Link, useLoaderData } from "react-router-dom";
 
 const SingleFood = () => {
     const {
+        _id,
         image,
         foodName,
         category,
@@ -40,7 +41,10 @@ const SingleFood = () => {
                         {foodOrigin}
                     </h3>
                     <p className="font-light text-lg">{shortDescription}</p>
-                    <Link to="/purchase" className="btn bg-[#F2A64D] text-white border-0 hover:bg-[#c5863e]">
+                    <Link
+                        to={`/purchase/${_id}`}
+                        className="btn bg-[#F2A64D] text-white border-0 hover:bg-[#c5863e]"
+                    >
                         Order
                     </Link>
                 </div>
