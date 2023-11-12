@@ -7,6 +7,7 @@ import Register from "../Pages/Register/Register";
 import AllItems from "../Pages/All-Items/AllItems";
 import Blog from "../Pages/Blog/Blog";
 import AddFood from "../Pages/AddFood/AddFood";
+import SingleFood from "../Pages/SingleFood/SingleFood";
 
 const router = createBrowserRouter([
     {
@@ -22,6 +23,11 @@ const router = createBrowserRouter([
                 path: "/all-items",
                 element: <AllItems></AllItems>,
                 loader: () => fetch("http://localhost:5000/foods-count"),
+            },
+            {
+                path: "/all-items/:id",
+                element: <SingleFood></SingleFood>,
+                loader: ({params}) => fetch(`http://localhost:5000/foods/${params.id}`)
             },
             {
                 path: "/blog",

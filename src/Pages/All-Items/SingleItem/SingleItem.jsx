@@ -1,7 +1,9 @@
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 const SingleItem = ({ food }) => {
-    const { image, foodName, category, price, quantity } = food;
+    const { _id, image, foodName, category, price, quantity } = food;
+
     return (
         <div className="border-4 rounded-3xl p-3 lg:p-5 space-y-5">
             <img className="rounded-2xl" src={image} alt="" />
@@ -16,9 +18,13 @@ const SingleItem = ({ food }) => {
                     Price:<span className="text-[#F2A64D]"> {price} $</span>
                 </h3>
                 <h3 className="font-light text-lg">Quantity: {quantity}</h3>
-                <button className="btn btn-sm bg-[#F2A64D] text-white hover:bg-[#F2A64D] border-0">
+                <Link
+                    to={`/all-items/${_id}`}
+                    food={food}
+                    className="btn btn-sm bg-[#F2A64D] text-white hover:bg-[#F2A64D] border-0"
+                >
                     See Details
-                </button>
+                </Link>
             </div>
         </div>
     );
