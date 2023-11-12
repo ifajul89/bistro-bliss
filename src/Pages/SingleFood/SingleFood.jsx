@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
 const SingleFood = () => {
     const {
@@ -40,9 +40,9 @@ const SingleFood = () => {
                         {foodOrigin}
                     </h3>
                     <p className="font-light text-lg">{shortDescription}</p>
-                    <button className="btn bg-[#F2A64D] text-white border-0 hover:bg-[#c5863e]">
+                    <Link to="/purchase" className="btn bg-[#F2A64D] text-white border-0 hover:bg-[#c5863e]">
                         Order
-                    </button>
+                    </Link>
                 </div>
             </div>
         </div>
