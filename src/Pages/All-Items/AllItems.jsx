@@ -17,11 +17,14 @@ const AllItems = () => {
     const pagesNumber = [...Array(numberOfPages).keys()];
 
     useEffect(() => {
-        axios.get( `http://localhost:5000/foods?search=${search}&page=${currentPage}&size=${itemsPerPage}`)
-        .then(data => {
-            setFoods(data.data)
-        })
-    }, [search, currentPage, itemsPerPage])
+        axios
+            .get(
+                `http://localhost:5000/foods?search=${search}&page=${currentPage}&size=${itemsPerPage}`
+            )
+            .then((data) => {
+                setFoods(data.data);
+            });
+    }, [search, currentPage, itemsPerPage]);
 
     const handleSetCurrentPage = (pageNumber) => {
         setCurrentPage(pageNumber);

@@ -18,7 +18,7 @@ const PurchasePage = () => {
     return (
         <div className="container mx-auto grid grid-cols-3">
             <div className="col-span-1">
-                <img src={image} alt="" />
+                <img className="w-full" src={image} alt="" />
             </div>
             <div className="col-span-2">
                 <form>
