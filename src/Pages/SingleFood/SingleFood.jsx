@@ -34,7 +34,7 @@ const SingleFood = () => {
                     </h3>
                     <h3 className="text-xl">
                         <span className="font-semibold">Made By: </span>
-                        {madeBy}
+                        {madeBy?.name}
                     </h3>
                     <h3 className="text-xl">
                         <span className="font-semibold">Origin: </span>

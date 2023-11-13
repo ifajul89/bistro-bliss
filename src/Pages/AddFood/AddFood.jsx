@@ -2,18 +2,23 @@ import { useContext } from "react";
 import AddFoodBg from "../../assets/addproduct.jpg";
 import { AuthContext } from "../../Provider/AuthProvider";
 import axios from "axios";
+import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
 const AddFood = () => {
     const { user } = useContext(AuthContext);
+
+    const navigate = useNavigate();
 
     const handleAddFood = (e) => {
         e.preventDefault();
         const form = e.target;
         const foodName = form.foodName.value;
-        const image = form.photo.image;
+        const image = form.image.value;
         const category = form.category.value;
         const quantity = form.quantity.value;
         const price = form.price.value;
+        const id = user.uid;
         const name = form.name.value;
         const email = form.email.value;
         const foodOrigin = form.foodOrigin.value;
@@ -24,13 +29,22 @@ const AddFood = () => {
             category,
             quantity,
             price,
-            madeBy: { name, email },
+            timesOrdered: 0,
+            madeBy: { id, name, email },
             foodOrigin,
             shortDescription,
         };
 
         axios.post("http://localhost:5000/foods", newFood).then((data) => {
             console.log(data.data);
+            if (data.data.insertedId) {
+                Swal.fire({
+                    title: "Success",
+                    text: "Ordered Food Successfully",
+                    icon: "success",
+                });
+                navigate("/");
+            }
         });
     };
 
