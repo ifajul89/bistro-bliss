@@ -13,7 +13,9 @@ const TopItems = () => {
 
     if (isPending) {
         return (
-            <span className="loading text-[#F2A64D] loading-dots loading-lg"></span>
+            <div className="flex justify-center my-20 duration-300">
+                <span className="loading text-[#F2A64D] loading-dots loading-lg"></span>
+            </div>
         );
     }
 
