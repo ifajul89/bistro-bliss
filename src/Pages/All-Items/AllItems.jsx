@@ -75,7 +75,7 @@ const AllItems = () => {
                     type="text"
                     name="search"
                     placeholder="Search Your Food"
-                    className="input rounded-full w-1/2 focus:outline-none bg-gray-100"
+                    className="input rounded-full w-full md:w-1/2 focus:outline-none bg-gray-100"
                 />
                 <button className="btn btn-circle border-0 bg-[#F2A64D] text-white hover:bg-[#aa7436]">
                     <BiSearchAlt className="text-xl"></BiSearchAlt>

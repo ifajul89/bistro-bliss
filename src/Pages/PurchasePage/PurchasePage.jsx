@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import axios from "axios";
 import Swal from "sweetalert2";
@@ -10,6 +10,8 @@ const PurchasePage = () => {
     const [error, setError] = useState("");
 
     const { _id, image, foodName, quantity, price } = useLoaderData();
+
+    const navigate = useNavigate();
 
     const handlePurchase = (e) => {
         e.preventDefault();
@@ -34,13 +36,18 @@ const PurchasePage = () => {
             if (data.data.insertedId) {
                 Swal.fire({
                     title: "Success",
-                    text: "Added To Cart",
+                    text: "Ordered Food Successfully",
                     icon: "success",
                 });
+                navigate("/");
             }
         });
 
-        axios.put(`http://localhost:5000/foods/${_id}`);
+        const updatedFood = { quantity: quantity - quantityInput };
+
+        axios
+            .put(`http://localhost:5000/foods/${_id}`, updatedFood)
+            .then(() => {});
     };
 
     return (
