@@ -9,7 +9,7 @@ import { BiSearchAlt } from "react-icons/bi";
 
 const AllItems = () => {
     const { count } = useLoaderData();
-    const [currentPage, setCurrentPage] = useState(1);
+    const [currentPage, setCurrentPage] = useState(0);
     const [search, setSearch] = useState("");
 
     const itemsPerPage = 9;
