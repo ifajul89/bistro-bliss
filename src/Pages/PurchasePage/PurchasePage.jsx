@@ -8,18 +8,53 @@ const PurchasePage = () => {
     const { user } = useContext(AuthContext);
     const { displayName, email } = user;
     const [error, setError] = useState("");
+    const [quantityInput, setQuantityInput] = useState(1);
 
     const { _id, image, foodName, quantity, price } = useLoaderData();
+
+    const calculatePrice = (newQuantity) => {
+        const basePrice = price;
+        return basePrice * newQuantity;
+    };
+
+    const [totalPrice, setTotalPrice] = useState(calculatePrice(1));
+
+    const handleQuantity = (e) => {
+        const newQuantity = parseInt(e.target.value);
+        setQuantityInput(newQuantity);
+        setTotalPrice(calculatePrice(newQuantity));
+    };
 
     const navigate = useNavigate();
 
     const handlePurchase = (e) => {
         e.preventDefault();
-        const quantityInput = e.target.quantity.value;
         setError("");
 
+        if (quantityInput === 0) {
+            setError("Please Select Quantity");
+            return;
+        }
+
+        if (quantityInput < 0) {
+            setError("Please Select A Valid Quantity");
+        }
+
+        if (quantity <= 0) {
+            Swal.fire({
+                title: "Sorry!",
+                text: "We Are Out Of This Item",
+                icon: "error",
+            });
+            return;
+        }
+
         if (quantityInput > quantity) {
-            setError("You Can't Purchase More Than Stock Quantity");
+            Swal.fire({
+                title: "Oops!",
+                text: "You Can't Order More Than Stock Item",
+                icon: "error",
+            });
             return;
         }
 
@@ -27,7 +62,7 @@ const PurchasePage = () => {
             image,
             foodName,
             quantity: quantityInput,
-            price,
+            price: totalPrice,
             buyerName: displayName,
             buyerEmail: email,
         };
@@ -85,7 +120,7 @@ const PurchasePage = () => {
                             <input
                                 type="text"
                                 name="price"
-                                value={`${price} $`}
+                                value={`${totalPrice} $`}
                                 className="input rounded-full w-full focus:outline-none bg-gray-100"
                                 readOnly
                                 required
@@ -99,6 +134,8 @@ const PurchasePage = () => {
                             </label>
                             <input
                                 type="number"
+                                onChange={handleQuantity}
+                                value={quantityInput}
                                 name="quantity"
                                 placeholder="Please Select Quantity"
                                 className="input rounded-full w-full focus:outline-none bg-gray-100"
