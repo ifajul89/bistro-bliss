@@ -36,11 +36,10 @@ const AddFood = () => {
         };
 
         axios.post("http://localhost:5000/foods", newFood).then((data) => {
-            console.log(data.data);
             if (data.data.insertedId) {
                 Swal.fire({
                     title: "Success",
-                    text: "Ordered Food Successfully",
+                    text: "Food Added Successfully",
                     icon: "success",
                 });
                 navigate("/");

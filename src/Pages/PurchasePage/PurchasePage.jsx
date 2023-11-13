@@ -6,11 +6,12 @@ import Swal from "sweetalert2";
 
 const PurchasePage = () => {
     const { user } = useContext(AuthContext);
-    const { displayName, email } = user;
+    const { uid, displayName, email } = user;
     const [error, setError] = useState("");
     const [quantityInput, setQuantityInput] = useState(1);
 
-    const { _id, image, foodName, quantity, price } = useLoaderData();
+    const { _id, image, foodName, quantity, timesOrdered, price, madeBy } =
+        useLoaderData();
 
     const calculatePrice = (newQuantity) => {
         const basePrice = price;
@@ -58,6 +59,15 @@ const PurchasePage = () => {
             return;
         }
 
+        if (madeBy.id === uid) {
+            Swal.fire({
+                title: "Oops!",
+                text: "You Can't Order Your Own Item",
+                icon: "error",
+            });
+            return;
+        }
+
         const newCart = {
             image,
             foodName,
@@ -78,7 +88,10 @@ const PurchasePage = () => {
             }
         });
 
-        const updatedFood = { quantity: quantity - quantityInput };
+        const updatedFood = {
+            timesOrdered: timesOrdered + quantityInput,
+            quantity: quantity - quantityInput,
+        };
 
         axios
             .put(`http://localhost:5000/foods/${_id}`, updatedFood)
