@@ -1,13 +1,45 @@
 import { useContext, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
+import axios from "axios";
+import Swal from "sweetalert2";
 
 const PurchasePage = () => {
     const { user } = useContext(AuthContext);
     const { displayName, email } = user;
-    const [error, setError] = useState();
+    const [error, setError] = useState("");
 
     const { image, foodName, quantity, price } = useLoaderData();
+
+    const handlePurchase = (e) => {
+        e.preventDefault();
+        const quantityInput = e.target.quantity.value;
+        setError("");
+
+        if (quantityInput > quantity) {
+            setError("You Can't Purchase More Than Stock Quantity");
+            return;
+        }
+
+        const newCart = {
+            image,
+            foodName,
+            quantity: quantityInput,
+            price,
+            buyerName: displayName,
+            buyerEmail: email,
+        };
+
+        axios.post("http://localhost:5000/carts", newCart).then((data) => {
+            if (data.data.insertedId) {
+                Swal.fire({
+                    title: "Success",
+                    text: "Added To Cart",
+                    icon: "success",
+                });
+            }
+        });
+    };
 
     return (
         <div className="container mx-auto grid gap-5 grid-cols-3 border-4 p-10 mb-5 rounded-3xl">
@@ -15,7 +47,10 @@ const PurchasePage = () => {
                 <img className="w-full rounded-3xl" src={image} alt="" />
             </div>
             <div className="col-span-2">
-                <form className="grid grid-cols-2 gap-5">
+                <form
+                    onSubmit={handlePurchase}
+                    className="grid grid-cols-2 gap-5"
+                >
                     <div className="w-full">
                         <label className="label">
                             <span className="label-text text-gray-600">
@@ -104,8 +139,14 @@ const PurchasePage = () => {
                             required
                         />
                     </div>
-
-                    <button className="btn border-0 mt-5 bg-[#F2A64D] text-white hover:bg-[#aa7436] col-span-2 rounded-full">
+                    {error ? (
+                        <p className="text-red-600 font-semibold duration-300">
+                            {error}
+                        </p>
+                    ) : (
+                        ""
+                    )}
+                    <button className="btn border-0 bg-[#F2A64D] text-white hover:bg-[#aa7436] col-span-2 rounded-full">
                         Purchase
                     </button>
                 </form>
