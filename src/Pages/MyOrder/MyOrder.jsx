@@ -1,7 +1,8 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { useQuery } from "@tanstack/react-query";
 import CartItem from "./CartItem/CartItem";
+import axios from "axios";
 
 const MyOrder = () => {
     const { user } = useContext(AuthContext);
@@ -22,6 +23,12 @@ const MyOrder = () => {
         );
     }
 
+    const handleDeleteCart = (id) => {
+        axios.delete(`http://localhost:5000/carts/${id}`).then((data) => {
+            console.log(data.data);
+        });
+    };
+
     return (
         <div className="container mx-auto">
             {carts.length <= 0 ? (
@@ -34,7 +41,11 @@ const MyOrder = () => {
             ) : (
                 <div className="px-3 md:px-0 space-y-3 mb-3">
                     {carts.map((cart) => (
-                        <CartItem key={cart._id} cart={cart}></CartItem>
+                        <CartItem
+                            key={cart._id}
+                            cart={cart}
+                            handleDeleteCart={handleDeleteCart}
+                        ></CartItem>
                     ))}
                 </div>
             )}

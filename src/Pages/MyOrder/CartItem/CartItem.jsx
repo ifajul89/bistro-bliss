@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 
-const CartItem = ({ cart }) => {
-    const { image, foodName, price, addedTime, foodOwner, buyerId } = cart;
+const CartItem = ({ cart, handleDeleteCart }) => {
+    const { _id, image, foodName, price, addedTime, foodOwner } = cart;
 
     return (
         <div>
@@ -21,7 +21,10 @@ const CartItem = ({ cart }) => {
                 <h4 className="flex-1 text-center text-lg font-medium">
                     Owner: <span className="text-[#F2A64D]">{foodOwner}</span>
                 </h4>
-                <button className="btn btn-sm md:btn-md bg-[#F2A64D] hover:bg-[#c7873f] border-0 text-white">
+                <button
+                    onClick={() => handleDeleteCart(_id)}
+                    className="btn btn-sm md:btn-md bg-[#F2A64D] hover:bg-[#c7873f] border-0 text-white"
+                >
                     Delete
                 </button>
             </div>
@@ -31,6 +34,7 @@ const CartItem = ({ cart }) => {
 
 CartItem.propTypes = {
     cart: PropTypes.object.isRequired,
+    handleDeleteCart: PropTypes.func.isRequired,
 };
 
 export default CartItem;

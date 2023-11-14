@@ -10,11 +10,11 @@ https://bistro-bliss.web.app/
 
 ### Five features of my project
 
-- My web page is built with React Router DOM. That is why it is possible to navigate multiple routes on a single page on my website without any reload.
+- This project is Restaurant Management Website. Users can know about us, read blogs, order foods and much more stuffs with it.
 
-- I used the Tailwind CSS framework instead of vanilla CSS for my web page. As a result I have been able to give many attractive designs to my web page. And  I have made my website responsive for all types of devices, so my website will look good on all devices.
+- This web page is built with React Router DOM. That is why it is possible to navigate multiple routes on a single page on my website without any reload.
 
-- My project is Restaurant Management Website. We provide all quality foods for events, birthday, party or individual order.
+- For all side effects Tanstack Query / React Query has been used, that made error handling, fetching and pending data load much easier.
 
 - React Helmet has been used to make the head and title dynamic.
 
