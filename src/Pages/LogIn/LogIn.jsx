@@ -17,7 +17,6 @@ const Register = () => {
         const form = e.target;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(email, password);
         setError("");
         setSuccess("");
 
@@ -56,7 +55,7 @@ const Register = () => {
         signInUser(email, password)
             .then((result) => {
                 if (result.user) {
-                    setSuccess("User Created Successfully");
+                    setSuccess("Signed In Successfully");
                     Swal.fire({
                         title: "Success",
                         text: "Signed In Successfully",
@@ -74,7 +73,7 @@ const Register = () => {
         googleSignIn()
             .then((result) => {
                 if (result.user) {
-                    setSuccess("User Created Successfully");
+                    setSuccess("Signed In Successfully");
                     Swal.fire({
                         title: "Success",
                         text: "Signed In Successfully",

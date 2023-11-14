@@ -1,13 +1,15 @@
 import { useContext, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import RegisterBg from "../../assets/register.jpg";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { updateProfile } from "firebase/auth";
+import Swal from "sweetalert2";
 
 const Register = () => {
     const { createUser } = useContext(AuthContext);
     const [error, setError] = useState("");
     const [success, setSuccess] = useState("");
+    const navigate = useNavigate();
 
     const handleRegister = (e) => {
         e.preventDefault();
@@ -16,7 +18,6 @@ const Register = () => {
         const photo = form.photo.value;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(name, photo, email, password);
         setError("");
         setSuccess("");
 
@@ -74,6 +75,12 @@ const Register = () => {
                         displayName: name,
                         photoURL: photo,
                     });
+                    Swal.fire({
+                        title: "Success",
+                        text: "User Created Successfully",
+                        icon: "success",
+                    });
+                    navigate(location?.state ? location.state : "/");
                 }
             })
             .catch((error) => {
