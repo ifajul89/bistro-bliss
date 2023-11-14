@@ -6,6 +6,7 @@ import "./AllItems.css";
 import { useQuery } from "@tanstack/react-query";
 import { useState } from "react";
 import { BiSearchAlt } from "react-icons/bi";
+import { Helmet } from "react-helmet-async";
 
 const AllItems = () => {
     const { count } = useLoaderData();
@@ -64,6 +65,9 @@ const AllItems = () => {
 
     return (
         <div className="container mx-auto px-3 md:px-0">
+            <Helmet>
+                <title>Bistro Bliss | All Items</title>
+            </Helmet>
             <h3 className="py-3 px-4  md:text-base lg:text-lg font-cursive font-semibold bg-white rounded-2xl border-4 text-center ">
                 ALL ITEMS
             </h3>

@@ -4,6 +4,7 @@ import RegisterBg from "../../assets/register.jpg";
 import { FcGoogle } from "react-icons/fc";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 
 const Register = () => {
     const { signInUser, googleSignIn } = useContext(AuthContext);
@@ -89,6 +90,9 @@ const Register = () => {
 
     return (
         <div className="container mx-auto flex flex-col mb-5 md:flex-row gap-3 md:gap-5 lg:gap-10 lg:p-10 px-3 md:px-0">
+            <Helmet>
+                <title>Bistro Bliss | Log In</title>
+            </Helmet>
             <div className="border-4 p-2 md:p-5 lg:p-10 flex justify-between md:justify-start md:flex-col items-center gap-3 md:gap-5 rounded-3xl md:w-1/3">
                 <div className="w-[44px] sm:w-[70px] md:w-[170px] lg:w-[250px]">
                     <img className="rounded-full" src={RegisterBg} alt="" />

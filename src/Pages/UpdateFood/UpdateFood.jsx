@@ -1,11 +1,15 @@
 import { useContext } from "react";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import AddFoodBg from "../../assets/addproduct.jpg";
 import axios from "axios";
+import { Helmet } from "react-helmet-async";
+import Swal from "sweetalert2";
 
 const UpdateFood = () => {
     const { user } = useContext(AuthContext);
+
+    const navigate = useNavigate();
 
     const {
         _id,
@@ -41,12 +45,22 @@ const UpdateFood = () => {
         axios
             .put(`http://localhost:5000/food/${_id}`, updatedFood)
             .then((data) => {
-                console.log(data.data);
+                if (data.data.modifiedCount) {
+                    Swal.fire({
+                        title: "Success",
+                        text: "Item Updated Successfully",
+                        icon: "success",
+                    });
+                    navigate("/");
+                }
             });
     };
 
     return (
         <div className="container mx-auto flex flex-col mb-5 md:flex-row gap-3 md:gap-5 lg:gap-10 lg:p-10 px-3 md:px-0">
+            <Helmet>
+                <title>Bistro Bliss | Update Food</title>
+            </Helmet>
             <div className="border-4 p-2 md:p-5 lg:p-10 flex justify-between md:justify-start md:flex-col items-center gap-3 md:gap-5 rounded-3xl md:w-1/3">
                 <div className="w-[44px] sm:w-[70px] md:w-[170px] lg:w-[300px]">
                     <img className="rounded-full" src={AddFoodBg} alt="" />

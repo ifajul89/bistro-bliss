@@ -1,6 +1,11 @@
+import { Helmet } from "react-helmet-async";
+
 const Blog = () => {
     return (
         <div>
+            <Helmet>
+                <title>Bistro Bliss | Blogs</title>
+            </Helmet>
             <div className="container mx-auto px-3 md:px-0">
                 <h3 className="py-3 px-4  md:text-base lg:text-lg font-cursive font-semibold bg-white rounded-2xl border-4 text-center ">
                     BLOGS

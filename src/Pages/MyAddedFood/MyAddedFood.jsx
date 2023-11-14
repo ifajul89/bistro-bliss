@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import AddedFood from "./AddedFood/AddedFood";
+import { Helmet } from "react-helmet-async";
 
 const MyAddedFood = () => {
     const { user } = useContext(AuthContext);
@@ -24,6 +25,9 @@ const MyAddedFood = () => {
 
     return (
         <div className="container mx-auto">
+            <Helmet>
+                <title>Bistro Bliss | My Added Food</title>
+            </Helmet>
             {addedFoods.length <= 0 ? (
                 <div className="flex justify-center items-center h-80">
                     <h3 className="text-gray-500 text-xl">

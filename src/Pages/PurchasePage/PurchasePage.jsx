@@ -3,6 +3,7 @@ import { useLoaderData, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import axios from "axios";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 
 const PurchasePage = () => {
     const { user } = useContext(AuthContext);
@@ -104,6 +105,9 @@ const PurchasePage = () => {
 
     return (
         <div className="mx-auto container px-3 md:px-0">
+            <Helmet>
+                <title>Bistro Bliss | Purchase {foodName}</title>
+            </Helmet>
             <div className="grid gap-3 md:gap-5 grid-cols-3 border-4 p-3 md:p-10 mb-5 rounded-3xl">
                 <div className="col-span-3 lg:col-span-1">
                     <img className="w-full rounded-3xl" src={image} alt="" />

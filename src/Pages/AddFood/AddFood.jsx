@@ -4,6 +4,7 @@ import { AuthContext } from "../../Provider/AuthProvider";
 import axios from "axios";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 const AddFood = () => {
     const { user } = useContext(AuthContext);
@@ -49,6 +50,9 @@ const AddFood = () => {
 
     return (
         <div className="container mx-auto flex flex-col mb-5 md:flex-row gap-3 md:gap-5 lg:gap-10 lg:p-10 px-3 md:px-0">
+            <Helmet>
+                <title>Bistro Bliss | Add Food</title>
+            </Helmet>
             <div className="border-4 p-2 md:p-5 lg:p-10 flex justify-between md:justify-start md:flex-col items-center gap-3 md:gap-5 rounded-3xl md:w-1/3">
                 <div className="w-[44px] sm:w-[70px] md:w-[170px] lg:w-[300px]">
                     <img className="rounded-full" src={AddFoodBg} alt="" />

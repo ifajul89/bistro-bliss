@@ -3,6 +3,7 @@ import { AuthContext } from "../../Provider/AuthProvider";
 import { useQuery } from "@tanstack/react-query";
 import CartItem from "./CartItem/CartItem";
 import axios from "axios";
+import { Helmet } from "react-helmet-async";
 
 const MyOrder = () => {
     const { user } = useContext(AuthContext);
@@ -31,6 +32,9 @@ const MyOrder = () => {
 
     return (
         <div className="container mx-auto">
+            <Helmet>
+                <title>Bistro Bliss | My Order</title>
+            </Helmet>
             {carts.length <= 0 ? (
                 <div className="flex justify-center items-center h-80">
                     <h3 className="text-gray-500 text-xl">
