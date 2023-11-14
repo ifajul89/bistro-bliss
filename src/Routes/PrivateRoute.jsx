@@ -8,6 +8,7 @@ const PrivateRoute = ({ children }) => {
 
     const { user, loading } = useContext(AuthContext);
 
+
     if (loading) {
         return (
             <div className="flex justify-center my-20 duration-300">
