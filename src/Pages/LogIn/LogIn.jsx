@@ -2,14 +2,16 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import RegisterBg from "../../assets/register.jpg";
 import { FcGoogle } from "react-icons/fc";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const Register = () => {
     const { signInUser, googleSignIn } = useContext(AuthContext);
     const [error, setError] = useState("");
     const [success, setSuccess] = useState("");
+    const location = useLocation();
+    const navigate = useNavigate();
 
-    const handleRegister = (e) => {
+    const handleLogIn = (e) => {
         e.preventDefault();
         const form = e.target;
         const email = form.email.value;
@@ -54,6 +56,7 @@ const Register = () => {
             .then((result) => {
                 if (result.user) {
                     setSuccess("User Created Successfully");
+                    navigate(location?.state ? location.state : "/");
                 }
             })
             .catch((error) => {
@@ -65,6 +68,7 @@ const Register = () => {
         googleSignIn()
             .then((result) => {
                 console.log(result);
+                navigate(location?.state ? location.state : "/");
             })
             .catch((error) => {
                 console.log(error);
@@ -88,7 +92,7 @@ const Register = () => {
                 </h4>
             </div>
             <div className="bg-white border-4 md:w-2/3 rounded-3xl p-3 md:p-5 lg:p-10">
-                <form onSubmit={handleRegister} className="">
+                <form onSubmit={handleLogIn} className="">
                     <div className="form-control">
                         <label className="label">
                             <span className="label-text text-gray-600">
