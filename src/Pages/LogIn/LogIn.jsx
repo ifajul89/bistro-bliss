@@ -3,6 +3,7 @@ import { AuthContext } from "../../Provider/AuthProvider";
 import RegisterBg from "../../assets/register.jpg";
 import { FcGoogle } from "react-icons/fc";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const Register = () => {
     const { signInUser, googleSignIn } = useContext(AuthContext);
@@ -56,6 +57,11 @@ const Register = () => {
             .then((result) => {
                 if (result.user) {
                     setSuccess("User Created Successfully");
+                    Swal.fire({
+                        title: "Success",
+                        text: "Signed In Successfully",
+                        icon: "success",
+                    });
                     navigate(location?.state ? location.state : "/");
                 }
             })
@@ -67,11 +73,18 @@ const Register = () => {
     const handleGoogleSignIn = () => {
         googleSignIn()
             .then((result) => {
-                console.log(result);
-                navigate(location?.state ? location.state : "/");
+                if (result.user) {
+                    setSuccess("User Created Successfully");
+                    Swal.fire({
+                        title: "Success",
+                        text: "Signed In Successfully",
+                        icon: "success",
+                    });
+                    navigate(location?.state ? location.state : "/");
+                }
             })
             .catch((error) => {
-                console.log(error);
+                setError(error.message);
             });
     };
 
