@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import RegisterBg from "../../assets/register.jpg";
 import { Link } from "react-router-dom";
+import { updateProfile } from "firebase/auth";
 
 const Register = () => {
     const { createUser } = useContext(AuthContext);
@@ -69,6 +70,10 @@ const Register = () => {
             .then((result) => {
                 if (result.user) {
                     setSuccess("User Created Successfully");
+                    updateProfile(result.user, {
+                        displayName: name,
+                        photoURL: photo,
+                    });
                 }
             })
             .catch((error) => {
