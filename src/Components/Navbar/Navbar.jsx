@@ -69,7 +69,9 @@ const Navbar = () => {
                     </div>
                 </Link>
                 <div className="flex gap-5 items-center">
-                    <BiSolidCartAlt className="text-xl text-[#F2A64D]"></BiSolidCartAlt>
+                    <Link to="/my-order">
+                        <BiSolidCartAlt className="text-xl text-[#F2A64D]"></BiSolidCartAlt>
+                    </Link>
                     <div className="dropdown dropdown-bottom dropdown-end">
                         <label tabIndex={0} className="m-1">
                             {user ? (

@@ -57,7 +57,7 @@ const AllItems = () => {
     };
 
     const handleNext = () => {
-        if (currentPage < 9) {
+        if (currentPage < pagesNumber.length - 1) {
             setCurrentPage(currentPage + 1);
         }
     };

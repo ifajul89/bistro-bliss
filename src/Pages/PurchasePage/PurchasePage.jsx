@@ -30,6 +30,7 @@ const PurchasePage = () => {
 
     const handlePurchase = (e) => {
         e.preventDefault();
+        const addedTime = e.target.date.value;
         setError("");
 
         if (quantityInput === 0) {
@@ -73,6 +74,9 @@ const PurchasePage = () => {
             foodName,
             quantity: quantityInput,
             price: totalPrice,
+            addedTime,
+            foodOwner: madeBy.name,
+            buyerId: uid,
             buyerName: displayName,
             buyerEmail: email,
         };
@@ -163,7 +167,7 @@ const PurchasePage = () => {
                             </label>
                             <input
                                 type="date"
-                                name="price"
+                                name="date"
                                 placeholder="Please Select a Date"
                                 className="input rounded-full w-full focus:outline-none bg-gray-100"
                                 required
