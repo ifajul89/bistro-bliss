@@ -94,7 +94,7 @@ const PurchasePage = () => {
         };
 
         axios
-            .put(`http://localhost:5000/foods/${_id}`, updatedFood)
+            .put(`http://localhost:5000/food/${_id}`, updatedFood)
             .then(() => {});
     };
 

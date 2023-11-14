@@ -6,8 +6,10 @@ import AddedFood from "./AddedFood/AddedFood";
 const MyAddedFood = () => {
     const { user } = useContext(AuthContext);
 
+    console.log(user?.uid);
+
     const { isPending, data: addedFoods } = useQuery({
-        queryKey: ["cartFoods", user?.uid],
+        queryKey: ["cartFoods"],
         queryFn: async () => {
             const res = await fetch(`http://localhost:5000/foods/${user?.uid}`);
             return res.json();
@@ -21,6 +23,8 @@ const MyAddedFood = () => {
             </div>
         );
     }
+
+    console.log(addedFoods);
 
     return (
         <div className="container mx-auto">
