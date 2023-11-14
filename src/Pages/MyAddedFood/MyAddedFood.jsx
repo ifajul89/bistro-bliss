@@ -6,8 +6,6 @@ import AddedFood from "./AddedFood/AddedFood";
 const MyAddedFood = () => {
     const { user } = useContext(AuthContext);
 
-    console.log(user?.uid);
-
     const { isPending, data: addedFoods } = useQuery({
         queryKey: ["cartFoods"],
         queryFn: async () => {
@@ -24,18 +22,25 @@ const MyAddedFood = () => {
         );
     }
 
-    console.log(addedFoods);
-
     return (
         <div className="container mx-auto">
-            <div className="px-3 md:px-0 space-y-3 mb-3">
-                {addedFoods.map((addedFood) => (
-                    <AddedFood
-                        key={addedFood._id}
-                        addedFood={addedFood}
-                    ></AddedFood>
-                ))}
-            </div>
+            {addedFoods.length <= 0 ? (
+                <div className="flex justify-center items-center h-80">
+                    <h3 className="text-gray-500 text-xl">
+                        {/* eslint-disable-next-line react/no-unescaped-entities */}
+                        <i>You haven't added any food</i>
+                    </h3>
+                </div>
+            ) : (
+                <div className="px-3 md:px-0 space-y-3 mb-3">
+                    {addedFoods.map((addedFood) => (
+                        <AddedFood
+                            key={addedFood._id}
+                            addedFood={addedFood}
+                        ></AddedFood>
+                    ))}
+                </div>
+            )}
         </div>
     );
 };
