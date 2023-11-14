@@ -1,32 +1,29 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
-import { useQuery } from "@tanstack/react-query";
 import CartItem from "./CartItem/CartItem";
 import axios from "axios";
 import { Helmet } from "react-helmet-async";
+// import Swal from "sweetalert2";
 
 const MyOrder = () => {
     const { user } = useContext(AuthContext);
 
-    const { isPending, data: carts } = useQuery({
-        queryKey: ["carts", user?.uid],
-        queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/carts/${user?.uid}`);
-            return res.json();
-        },
-    });
+    const [cartFoods, setCartFoods] = useState([]);
 
-    if (isPending) {
-        return (
-            <div className="flex justify-center my-20 duration-300">
-                <span className="loading text-[#F2A64D] loading-dots loading-lg"></span>
-            </div>
-        );
-    }
+    useEffect(() => {
+        axios
+            .get(`http://localhost:5000/carts/${user?.uid}`)
+            .then((res) => setCartFoods(res.data));
+    }, [user?.uid]);
 
     const handleDeleteCart = (id) => {
         axios.delete(`http://localhost:5000/carts/${id}`).then((data) => {
-            console.log(data.data);
+            if (data.data.deletedCount > 0) {
+                const remaining = cartFoods.filter(
+                    (cartFood) => cartFood._id !== id
+                );
+                setCartFoods(remaining);
+            }
         });
     };
 
@@ -35,7 +32,7 @@ const MyOrder = () => {
             <Helmet>
                 <title>Bistro Bliss | My Order</title>
             </Helmet>
-            {carts.length <= 0 ? (
+            {cartFoods?.length <= 0 ? (
                 <div className="flex justify-center items-center h-80">
                     <h3 className="text-gray-500 text-xl">
                         {/* eslint-disable-next-line react/no-unescaped-entities */}
@@ -44,7 +41,7 @@ const MyOrder = () => {
                 </div>
             ) : (
                 <div className="px-3 md:px-0 space-y-3 mb-3">
-                    {carts.map((cart) => (
+                    {cartFoods.map((cart) => (
                         <CartItem
                             key={cart._id}
                             cart={cart}
