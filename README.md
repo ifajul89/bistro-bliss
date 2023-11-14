@@ -10,7 +10,7 @@ https://bistro-bliss.web.app/
 
 ### Five features of my project
 
-- This project is Restaurant Management Website. Users can know about us, read blogs, order foods and much more stuffs with it.
+- This project is Restaurant Management Website. Users can know about us, read blogs, order foods and much more.
 
 - This web page is built with React Router DOM. That is why it is possible to navigate multiple routes on a single page on my website without any reload.
 
