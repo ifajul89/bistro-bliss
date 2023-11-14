@@ -1,8 +1,21 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 🔗 My project live link
+You can also check my website by following the link below.
 
-Currently, two official plugins are available:
+https://bistro-bliss.web.app/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+# Questions
+- Add at least 5 Project features
+
+### Five features of my project
+
+- My web page is built with React Router DOM. That is why it is possible to navigate multiple routes on a single page on my website without any reload.
+
+- I used the Tailwind CSS framework instead of vanilla CSS for my web page. As a result I have been able to give many attractive designs to my web page. And  I have made my website responsive for all types of devices, so my website will look good on all devices.
+
+- My project is Restaurant Management Website. We provide all quality foods for events, birthday, party or individual order.
+
+- React Helmet has been used to make the head and title dynamic.
+
+- JWT or JSON Web Token has been used to make the user authorization much more secure.

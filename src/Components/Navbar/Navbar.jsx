@@ -90,7 +90,7 @@ const Navbar = () => {
                                 <Link to="/add-food">Add a food</Link>
                             </li>
                             <li>
-                                <Link>My added food </Link>
+                                <Link to="/my-added-food">My added food </Link>
                             </li>
                         </ul>
                     </div>
