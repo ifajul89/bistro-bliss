@@ -3,7 +3,7 @@ import { AuthContext } from "../../Provider/AuthProvider";
 import CartItem from "./CartItem/CartItem";
 import axios from "axios";
 import { Helmet } from "react-helmet-async";
-// import Swal from "sweetalert2";
+import Swal from "sweetalert2";
 
 const MyOrder = () => {
     const { user } = useContext(AuthContext);
@@ -17,12 +17,31 @@ const MyOrder = () => {
     }, [user?.uid]);
 
     const handleDeleteCart = (id) => {
-        axios.delete(`http://localhost:5000/carts/${id}`).then((data) => {
-            if (data.data.deletedCount > 0) {
-                const remaining = cartFoods.filter(
-                    (cartFood) => cartFood._id !== id
-                );
-                setCartFoods(remaining);
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!",
+        }).then((result) => {
+            if (result.isConfirmed) {
+                axios
+                    .delete(`http://localhost:5000/carts/${id}`)
+                    .then((data) => {
+                        if (data.data.deletedCount > 0) {
+                            const remaining = cartFoods.filter(
+                                (cartFood) => cartFood._id !== id
+                            );
+                            setCartFoods(remaining);
+                            Swal.fire(
+                                "Deleted!",
+                                "Your Food has been deleted.",
+                                "success"
+                            );
+                        }
+                    });
             }
         });
     };
