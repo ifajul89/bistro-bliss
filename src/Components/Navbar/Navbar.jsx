@@ -1,21 +1,26 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { MdOutlinePersonOutline } from "react-icons/md";
 import { BiSolidCartAlt } from "react-icons/bi";
 import { HiMenuAlt1 } from "react-icons/hi";
 import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
+import Swal from "sweetalert2";
 
 const Navbar = () => {
     const { user, logOut } = useContext(AuthContext);
+    const navigate = useNavigate();
 
     const handleLogOut = () => {
         logOut()
-            .then((result) => {
-                console.log(result);
+            .then(() => {
+                Swal.fire({
+                    title: "Success",
+                    text: "Logged Out Successfully",
+                    icon: "success",
+                });
+                navigate("/");
             })
-            .catch((error) => {
-                console.log(error);
-            });
+            .catch(() => {});
     };
 
     const navItems = (
