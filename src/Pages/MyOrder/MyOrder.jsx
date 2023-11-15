@@ -30,7 +30,9 @@ const MyOrder = () => {
         }).then((result) => {
             if (result.isConfirmed) {
                 axios
-                    .delete(`http://localhost:5000/carts/${id}`)
+                    .delete(`http://localhost:5000/carts/?id=${id}`, {
+                        withCredentials: true,
+                    })
                     .then((data) => {
                         if (data.data.deletedCount > 0) {
                             const remaining = cartFoods.filter(

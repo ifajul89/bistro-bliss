@@ -45,25 +45,16 @@ const AuthProvider = ({ children }) => {
         const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
             const userId = currentUser?.uid || user?.uid;
             const loggedUser = { uid: userId };
-            console.log(loggedUser);
             setUser(currentUser);
             setLoading(false);
             if (currentUser) {
-                axios
-                    .post("http://localhost:5000/jwt", loggedUser, {
-                        withCredentials: true,
-                    })
-                    .then((res) => {
-                        console.log(res.data);
-                    });
+                axios.post("http://localhost:5000/jwt", loggedUser, {
+                    withCredentials: true,
+                });
             } else {
-                axios
-                    .post("http://localhost:5000/logout", loggedUser, {
-                        withCredentials: true,
-                    })
-                    .then((res) => {
-                        console.log(res.data);
-                    });
+                axios.post("http://localhost:5000/logout", loggedUser, {
+                    withCredentials: true,
+                });
             }
         });
         return () => {
