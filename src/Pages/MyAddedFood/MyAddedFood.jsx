@@ -10,7 +10,10 @@ const MyAddedFood = () => {
     const { isPending, data: addedFoods } = useQuery({
         queryKey: ["cartFoods"],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/foods/${user?.uid}`);
+            const res = await fetch(
+                `http://localhost:5000/my-added-foods/?id=${user?.uid}`,
+                { credentials: "include" }
+            );
             return res.json();
         },
     });
