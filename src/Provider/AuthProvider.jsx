@@ -48,11 +48,11 @@ const AuthProvider = ({ children }) => {
             setUser(currentUser);
             setLoading(false);
             if (currentUser) {
-                axios.post("http://localhost:5000/jwt", loggedUser, {
+                axios.post("https://b8a11-server-side-bluebird089.vercel.app/jwt", loggedUser, {
                     withCredentials: true,
                 });
             } else {
-                axios.post("http://localhost:5000/logout", loggedUser, {
+                axios.post("https://b8a11-server-side-bluebird089.vercel.app/logout", loggedUser, {
                     withCredentials: true,
                 });
             }

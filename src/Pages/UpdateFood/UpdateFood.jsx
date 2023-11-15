@@ -43,7 +43,7 @@ const UpdateFood = () => {
         };
 
         axios
-            .put(`http://localhost:5000/food/${_id}`, updatedFood)
+            .put(`https://b8a11-server-side-bluebird089.vercel.app/food/${_id}`, updatedFood)
             .then((data) => {
                 if (data.data.modifiedCount) {
                     Swal.fire({
