@@ -166,7 +166,7 @@ const Register = () => {
                         <input
                             className="btn rounded-full bg-[#F2A64D] text-white border-0 hover:bg-[#d68a34]"
                             type="submit"
-                            value="Register"
+                            value="Log In"
                         />
                     </div>
                 </form>

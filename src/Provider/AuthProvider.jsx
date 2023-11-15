@@ -45,6 +45,7 @@ const AuthProvider = ({ children }) => {
         const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
             const userId = currentUser?.uid || user?.uid;
             const loggedUser = { uid: userId };
+            console.log(loggedUser);
             setUser(currentUser);
             setLoading(false);
             if (currentUser) {
@@ -68,7 +69,7 @@ const AuthProvider = ({ children }) => {
         return () => {
             return unsubscribe();
         };
-    }, []);
+    }, [user?.uid]);
 
     const authInfo = {
         user,

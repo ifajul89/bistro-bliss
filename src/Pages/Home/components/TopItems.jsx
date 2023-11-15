@@ -6,7 +6,9 @@ const TopItems = () => {
     const { isPending, data: top6Data } = useQuery({
         queryKey: ["top6Data"],
         queryFn: async () => {
-            const res = await fetch("http://localhost:5000/top-foods");
+            const res = await fetch("http://localhost:5000/top-foods", {
+                credentials: "include",
+            });
             return res.json();
         },
     });

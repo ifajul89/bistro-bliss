@@ -41,6 +41,7 @@ const PurchasePage = () => {
 
         if (quantityInput < 0) {
             setError("Please Select A Valid Quantity");
+            return;
         }
 
         if (quantity <= 0) {

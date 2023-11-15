@@ -12,7 +12,9 @@ const MyOrder = () => {
 
     useEffect(() => {
         axios
-            .get(`http://localhost:5000/carts/${user?.uid}`)
+            .get(`http://localhost:5000/carts/?id=${user?.uid}`, {
+                withCredentials: true,
+            })
             .then((res) => setCartFoods(res.data));
     }, [user?.uid]);
 
