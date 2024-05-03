@@ -48,11 +48,11 @@ const AuthProvider = ({ children }) => {
             setUser(currentUser);
             setLoading(false);
             if (currentUser) {
-                axios.post("https://b8a11-server-side-bluebird089.vercel.app/jwt", loggedUser, {
+                axios.post("https://bistro-bliss-server.vercel.app/jwt", loggedUser, {
                     withCredentials: true,
                 });
             } else {
-                axios.post("https://b8a11-server-side-bluebird089.vercel.app/logout", loggedUser, {
+                axios.post("https://bistro-bliss-server.vercel.app/logout", loggedUser, {
                     withCredentials: true,
                 });
             }

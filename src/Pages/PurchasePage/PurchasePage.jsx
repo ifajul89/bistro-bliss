@@ -83,7 +83,7 @@ const PurchasePage = () => {
             buyerEmail: email,
         };
 
-        axios.post("https://b8a11-server-side-bluebird089.vercel.app/carts", newCart).then((data) => {
+        axios.post("https://bistro-bliss-server.vercel.app/carts", newCart).then((data) => {
             if (data.data.insertedId) {
                 Swal.fire({
                     title: "Success",
@@ -100,7 +100,7 @@ const PurchasePage = () => {
         };
 
         axios
-            .put(`https://b8a11-server-side-bluebird089.vercel.app/food/${_id}`, updatedFood)
+            .put(`https://bistro-bliss-server.vercel.app/food/${_id}`, updatedFood)
             .then(() => {});
     };
 

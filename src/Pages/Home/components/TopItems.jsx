@@ -6,7 +6,7 @@ const TopItems = () => {
     const { isPending, data: top6Data } = useQuery({
         queryKey: ["top6Data"],
         queryFn: async () => {
-            const res = await fetch("https://b8a11-server-side-bluebird089.vercel.app/top-foods", {
+            const res = await fetch("https://bistro-bliss-server.vercel.app/top-foods", {
                 credentials: "include",
             });
             return res.json();
