@@ -6,73 +6,69 @@ import { Helmet } from "react-helmet-async";
 import Swal from "sweetalert2";
 
 const MyOrder = () => {
-    const { user } = useContext(AuthContext);
+  const { user } = useContext(AuthContext);
 
-    const [cartFoods, setCartFoods] = useState([]);
+  const [cartFoods, setCartFoods] = useState([]);
 
-    useEffect(() => {
+  useEffect(() => {
+    axios
+      .get(`https://bistro-bliss-server.vercel.app/carts/?id=${user?.uid}`, {
+        withCredentials: true,
+      })
+      .then((res) => setCartFoods(res.data));
+  }, [user?.uid]);
+
+  const handleDeleteCart = (id) => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
         axios
-            .get(`https://bistro-bliss-server.vercel.app/carts/?id=${user?.uid}`, {
-                withCredentials: true,
-            })
-            .then((res) => setCartFoods(res.data));
-    }, [user?.uid]);
-
-    const handleDeleteCart = (id) => {
-        Swal.fire({
-            title: "Are you sure?",
-            text: "You won't be able to revert this!",
-            icon: "warning",
-            showCancelButton: true,
-            confirmButtonColor: "#3085d6",
-            cancelButtonColor: "#d33",
-            confirmButtonText: "Yes, delete it!",
-        }).then((result) => {
-            if (result.isConfirmed) {
-                axios
-                    .delete(`https://bistro-bliss-server.vercel.app/carts/?id=${id}`)
-                    .then((data) => {
-                        if (data.data.deletedCount > 0) {
-                            const remaining = cartFoods.filter(
-                                (cartFood) => cartFood._id !== id
-                            );
-                            setCartFoods(remaining);
-                            Swal.fire(
-                                "Deleted!",
-                                "Your Food has been deleted.",
-                                "success"
-                            );
-                        }
-                    });
+          .delete(`https://bistro-bliss-server.vercel.app/carts/?id=${id}`)
+          .then((data) => {
+            if (data.data.deletedCount > 0) {
+              const remaining = cartFoods.filter(
+                (cartFood) => cartFood._id !== id,
+              );
+              setCartFoods(remaining);
+              Swal.fire("Deleted!", "Your Food has been deleted.", "success");
             }
-        });
-    };
+          });
+      }
+    });
+  };
 
-    return (
-        <div className="container mx-auto">
-            <Helmet>
-                <title>Bistro Bliss | My Order</title>
-            </Helmet>
-            {cartFoods?.length <= 0 ? (
-                <div className="flex justify-center items-center h-80">
-                    <h3 className="text-gray-500 text-xl">
-                        {/* eslint-disable-next-line react/no-unescaped-entities */}
-                        <i>Cart is empty</i>
-                    </h3>
-                </div>
-            ) : (
-                <div className="px-3 md:px-0 space-y-3 mb-3">
-                    {cartFoods.map((cart) => (
-                        <CartItem
-                            key={cart._id}
-                            cart={cart}
-                            handleDeleteCart={handleDeleteCart}
-                        ></CartItem>
-                    ))}
-                </div>
-            )}
+  return (
+    <div className="container mx-auto">
+      <Helmet>
+        <title>Bistro Bliss | My Order</title>
+      </Helmet>
+      {cartFoods?.length <= 0 ? (
+        <div className="flex h-80 items-center justify-center">
+          <h3 className="text-xl text-gray-500">
+            {/* eslint-disable-next-line react/no-unescaped-entities */}
+            <i>Cart is empty</i>
+          </h3>
         </div>
-    );
+      ) : (
+        <div className="mb-3 space-y-3 px-3 md:px-0">
+          {cartFoods.map((cart) => (
+            <CartItem
+              key={cart._id}
+              cart={cart}
+              handleDeleteCart={handleDeleteCart}
+            ></CartItem>
+          ))}
+        </div>
+      )}
+    </div>
+  );
 };
 
 export default MyOrder;

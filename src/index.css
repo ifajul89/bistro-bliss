@@ -5,22 +5,22 @@
 @import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
 
 body {
-    font-family: "Jost", sans-serif;
+  font-family: "Jost", sans-serif;
 }
 
 .logo,
 .sidebar-title,
 .header-title,
 .font-cursive {
-    font-family: "Pacifico", cursive;
+  font-family: "Pacifico", cursive;
 }
 
 .header-image {
-    background-image: url("./assets/header.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
+  background-image: url("./assets/header.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .active {
-    @apply text-[#F2A64D];
+  @apply text-[#F2A64D];
 }

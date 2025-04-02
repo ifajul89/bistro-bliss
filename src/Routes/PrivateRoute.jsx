@@ -4,28 +4,27 @@ import { AuthContext } from "../Provider/AuthProvider";
 import PropTypes from "prop-types";
 
 const PrivateRoute = ({ children }) => {
-    const location = useLocation();
+  const location = useLocation();
 
-    const { user, loading } = useContext(AuthContext);
+  const { user, loading } = useContext(AuthContext);
 
+  if (loading) {
+    return (
+      <div className="my-20 flex justify-center duration-300">
+        <span className="loading loading-dots loading-lg text-[#F2A64D]"></span>
+      </div>
+    );
+  }
 
-    if (loading) {
-        return (
-            <div className="flex justify-center my-20 duration-300">
-                <span className="loading text-[#F2A64D] loading-dots loading-lg"></span>
-            </div>
-        );
-    }
+  if (user) {
+    return children;
+  }
 
-    if (user) {
-        return children;
-    }
-
-    return <Navigate state={location.pathname} to="/login"></Navigate>;
+  return <Navigate state={location.pathname} to="/login"></Navigate>;
 };
 
 PrivateRoute.propTypes = {
-    children: PropTypes.node.isRequired,
+  children: PropTypes.node.isRequired,
 };
 
 export default PrivateRoute;

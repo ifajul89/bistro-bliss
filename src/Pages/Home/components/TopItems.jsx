@@ -3,44 +3,47 @@ import { Link } from "react-router-dom";
 import TopItem from "./TopItem";
 
 const TopItems = () => {
-    const { isPending, data: top6Data } = useQuery({
-        queryKey: ["top6Data"],
-        queryFn: async () => {
-            const res = await fetch("https://bistro-bliss-server.vercel.app/top-foods", {
-                credentials: "include",
-            });
-            return res.json();
+  const { isPending, data: top6Data } = useQuery({
+    queryKey: ["top6Data"],
+    queryFn: async () => {
+      const res = await fetch(
+        "https://bistro-bliss-server.vercel.app/top-foods",
+        {
+          credentials: "include",
         },
-    });
+      );
+      return res.json();
+    },
+  });
 
-    if (isPending) {
-        return (
-            <div className="flex justify-center my-20 duration-300">
-                <span className="loading text-[#F2A64D] loading-dots loading-lg"></span>
-            </div>
-        );
-    }
-
+  if (isPending) {
     return (
-        <div className="container mx-auto px-3 md:px-0 mt-5 lg:mt-10">
-            <h3 className="py-3 px-4  md:text-base lg:text-lg font-cursive semibold bg-white rounded-2xl border-4 inline-block ">
-                OUR TOP FOODS
-            </h3>
-            <div className="grid md:grid-cols-3 gap-5 my-5">
-                {top6Data.map((data) => (
-                    <TopItem key={data._id} food={data}></TopItem>
-                ))}
-            </div>
-            <div className="flex justify-center">
-                <Link
-                    className="btn bg-[#F2A64D] text-white hover:bg-[#F2A64D] border-0"
-                    to="/all-items"
-                >
-                    See All
-                </Link>
-            </div>
-        </div>
+      <div className="my-20 flex justify-center duration-300">
+        <span className="loading loading-dots loading-lg text-[#F2A64D]"></span>
+      </div>
     );
+  }
+
+  return (
+    <div className="container mx-auto mt-5 px-3 md:px-0 lg:mt-10">
+      <h3 className="font-cursive semibold inline-block rounded-2xl border-4 bg-white px-4 py-3 md:text-base lg:text-lg">
+        OUR TOP FOODS
+      </h3>
+      <div className="my-5 grid gap-5 md:grid-cols-3">
+        {top6Data.map((data) => (
+          <TopItem key={data._id} food={data}></TopItem>
+        ))}
+      </div>
+      <div className="flex justify-center">
+        <Link
+          className="btn border-0 bg-[#F2A64D] text-white hover:bg-[#F2A64D]"
+          to="/all-items"
+        >
+          See All
+        </Link>
+      </div>
+    </div>
+  );
 };
 
 export default TopItems;
