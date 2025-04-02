@@ -104,7 +104,7 @@ const Register = () => {
         <h4 className="font-cursive font bold text-center sm:text-2xl lg:text-4xl">
           Please Register
         </h4>
-        <h4 className="font-cursive font bold text-center text-[#F2A64D] sm:text-2xl lg:text-4xl">
+        <h4 className="font-cursive font bold text-center text-primary sm:text-2xl lg:text-4xl">
           Bon Appétit
         </h4>
       </div>
@@ -170,14 +170,14 @@ const Register = () => {
             <input type="checkbox" name="" id="" required />
             <h3>
               I Accept The{" "}
-              <a className="text-[#F2A64D] underline" href="#">
+              <a className="text-primary underline" href="#">
                 Term and Conditions
               </a>
             </h3>
           </div>
           <div className="form-control mt-6">
             <input
-              className="btn rounded-full border-0 bg-[#F2A64D] text-white hover:bg-[#d68a34]"
+              className="btn rounded-full border-0 bg-primary text-white hover:bg-[#d68a34]"
               type="submit"
               value="Register"
             />
@@ -187,7 +187,7 @@ const Register = () => {
           Have an account? Please{" "}
           <Link
             to="/login"
-            className="font-semibold text-[#F2A64D] duration-300 hover:underline"
+            className="font-semibold text-primary duration-300 hover:underline"
           >
             Log In
           </Link>

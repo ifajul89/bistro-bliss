@@ -19,10 +19,10 @@ const OurMasterChef = () => {
           <div className="my-4 space-y-2 text-center text-[#626262]">
             <h3 className="font-semibold">Gordon Ramsay</h3>
             <div className="flex justify-center gap-3 text-xl">
-              <FaInstagram className="duration-300 hover:text-[#F2A64D]"></FaInstagram>
-              <BsPinterest className="duration-300 hover:text-[#F2A64D]"></BsPinterest>
-              <BiLogoTelegram className="duration-300 hover:text-[#F2A64D]"></BiLogoTelegram>
-              <RiTwitterXFill className="duration-300 hover:text-[#F2A64D]"></RiTwitterXFill>
+              <FaInstagram className="duration-300 hover:text-primary"></FaInstagram>
+              <BsPinterest className="duration-300 hover:text-primary"></BsPinterest>
+              <BiLogoTelegram className="duration-300 hover:text-primary"></BiLogoTelegram>
+              <RiTwitterXFill className="duration-300 hover:text-primary"></RiTwitterXFill>
             </div>
           </div>
         </div>
@@ -31,10 +31,10 @@ const OurMasterChef = () => {
           <div className="my-4 space-y-2 text-center text-[#626262]">
             <h3 className="font-semibold">Gigachad</h3>
             <div className="flex justify-center gap-3 text-xl">
-              <FaInstagram className="duration-300 hover:text-[#F2A64D]"></FaInstagram>
-              <BsPinterest className="duration-300 hover:text-[#F2A64D]"></BsPinterest>
-              <BiLogoTelegram className="duration-300 hover:text-[#F2A64D]"></BiLogoTelegram>
-              <RiTwitterXFill className="duration-300 hover:text-[#F2A64D]"></RiTwitterXFill>
+              <FaInstagram className="duration-300 hover:text-primary"></FaInstagram>
+              <BsPinterest className="duration-300 hover:text-primary"></BsPinterest>
+              <BiLogoTelegram className="duration-300 hover:text-primary"></BiLogoTelegram>
+              <RiTwitterXFill className="duration-300 hover:text-primary"></RiTwitterXFill>
             </div>
           </div>
         </div>
@@ -43,10 +43,10 @@ const OurMasterChef = () => {
           <div className="my-4 space-y-2 text-center text-[#626262]">
             <h3 className="font-semibold">Salt Bae</h3>
             <div className="flex justify-center gap-3 text-xl">
-              <FaInstagram className="duration-300 hover:text-[#F2A64D]"></FaInstagram>
-              <BsPinterest className="duration-300 hover:text-[#F2A64D]"></BsPinterest>
-              <BiLogoTelegram className="duration-300 hover:text-[#F2A64D]"></BiLogoTelegram>
-              <RiTwitterXFill className="duration-300 hover:text-[#F2A64D]"></RiTwitterXFill>
+              <FaInstagram className="duration-300 hover:text-primary"></FaInstagram>
+              <BsPinterest className="duration-300 hover:text-primary"></BsPinterest>
+              <BiLogoTelegram className="duration-300 hover:text-primary"></BiLogoTelegram>
+              <RiTwitterXFill className="duration-300 hover:text-primary"></RiTwitterXFill>
             </div>
           </div>
         </div>
@@ -55,10 +55,10 @@ const OurMasterChef = () => {
           <div className="my-4 space-y-2 text-center text-[#626262]">
             <h3 className="font-semibold">CZN Burak</h3>
             <div className="flex justify-center gap-3 text-xl">
-              <FaInstagram className="duration-300 hover:text-[#F2A64D]"></FaInstagram>
-              <BsPinterest className="duration-300 hover:text-[#F2A64D]"></BsPinterest>
-              <BiLogoTelegram className="duration-300 hover:text-[#F2A64D]"></BiLogoTelegram>
-              <RiTwitterXFill className="duration-300 hover:text-[#F2A64D]"></RiTwitterXFill>
+              <FaInstagram className="duration-300 hover:text-primary"></FaInstagram>
+              <BsPinterest className="duration-300 hover:text-primary"></BsPinterest>
+              <BiLogoTelegram className="duration-300 hover:text-primary"></BiLogoTelegram>
+              <RiTwitterXFill className="duration-300 hover:text-primary"></RiTwitterXFill>
             </div>
           </div>
         </div>

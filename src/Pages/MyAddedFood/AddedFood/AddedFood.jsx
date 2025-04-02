@@ -15,10 +15,10 @@ const AddedFood = ({ addedFood }) => {
         {foodName}
       </h3>
       <h4 className="flex-1 text-center text-sm font-medium sm:text-lg md:text-2xl">
-        Price: <span className="text-[#F2A64D]">{price}</span> $
+        Price: <span className="text-primary">{price}</span> $
       </h4>
       <Link
-        className="btn btn-sm border-0 bg-[#F2A64D] text-white md:btn-md hover:bg-[#c7873f]"
+        className="btn btn-sm border-0 bg-primary text-white md:btn-md hover:bg-[#c7873f]"
         to={`/update-food/${_id}`}
       >
         Update

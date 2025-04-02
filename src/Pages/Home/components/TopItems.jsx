@@ -19,7 +19,7 @@ const TopItems = () => {
   if (isPending) {
     return (
       <div className="my-20 flex justify-center duration-300">
-        <span className="loading loading-dots loading-lg text-[#F2A64D]"></span>
+        <span className="loading loading-dots loading-lg text-primary"></span>
       </div>
     );
   }
@@ -36,7 +36,7 @@ const TopItems = () => {
       </div>
       <div className="flex justify-center">
         <Link
-          className="btn border-0 bg-[#F2A64D] text-white hover:bg-[#F2A64D]"
+          className="btn border-0 bg-primary text-white hover:bg-primary"
           to="/all-items"
         >
           See All

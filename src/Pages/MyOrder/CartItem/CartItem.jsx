@@ -13,17 +13,17 @@ const CartItem = ({ cart, handleDeleteCart }) => {
         />
         <h3 className="flex-1 text-2xl font-semibold">{foodName}</h3>
         <h4 className="flex-1 text-center text-xl font-medium">
-          Price: <span className="text-[#F2A64D]">{price}</span> $
+          Price: <span className="text-primary">{price}</span> $
         </h4>
         <h4 className="flex-1 text-center text-lg font-medium">
-          Ordered: <span className="text-[#F2A64D]">{addedTime}</span>
+          Ordered: <span className="text-primary">{addedTime}</span>
         </h4>
         <h4 className="flex-1 text-center text-lg font-medium">
-          Owner: <span className="text-[#F2A64D]">{foodOwner}</span>
+          Owner: <span className="text-primary">{foodOwner}</span>
         </h4>
         <button
           onClick={() => handleDeleteCart(_id)}
-          className="btn btn-sm border-0 bg-[#F2A64D] text-white md:btn-md hover:bg-[#c7873f]"
+          className="btn btn-sm border-0 bg-primary text-white md:btn-md hover:bg-[#c7873f]"
         >
           Delete
         </button>

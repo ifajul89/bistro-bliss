@@ -17,6 +17,7 @@ const Navbar = () => {
           title: "Success",
           text: "Logged Out Successfully",
           icon: "success",
+          confirmButtonColor: ""
         });
         navigate("/");
       })
@@ -26,17 +27,17 @@ const Navbar = () => {
   const navItems = (
     <>
       <li>
-        <NavLink className="duration-300 hover:text-[#F2A64D]" to="/">
+        <NavLink className="duration-300 hover:text-primary" to="/">
           Home
         </NavLink>
       </li>
       <li>
-        <NavLink className="duration-300 hover:text-[#F2A64D]" to="/all-items">
+        <NavLink className="duration-300 hover:text-primary" to="/all-items">
           All Items
         </NavLink>
       </li>
       <li>
-        <NavLink className="duration-300 hover:text-[#F2A64D]" to="/blog">
+        <NavLink className="duration-300 hover:text-primary" to="/blog">
           Blog
         </NavLink>
       </li>
@@ -59,7 +60,7 @@ const Navbar = () => {
           to="/"
           className="logo flex flex-1 items-center justify-start leading-none lg:justify-center"
         >
-          <h3 className="text-3xl text-[#F2A64D] md:text-6xl">B</h3>
+          <h3 className="text-3xl text-primary md:text-6xl">B</h3>
           <div className="text-sm font-semibold leading-none md:text-xl">
             <h3>istro</h3>
             <h3>liss~</h3>
@@ -67,7 +68,7 @@ const Navbar = () => {
         </Link>
         <div className="flex items-center gap-5">
           <Link to="/my-order">
-            <BiSolidCartAlt className="text-xl text-[#F2A64D]"></BiSolidCartAlt>
+            <BiSolidCartAlt className="text-xl text-primary"></BiSolidCartAlt>
           </Link>
           <div className="dropdown dropdown-end dropdown-bottom">
             <label tabIndex={0} className="m-1">
@@ -99,7 +100,7 @@ const Navbar = () => {
                 <span>|</span>
                 <button
                   onClick={handleLogOut}
-                  className="text-lg font-medium duration-300 hover:text-[#F2A64D]"
+                  className="text-lg font-medium duration-300 hover:text-primary"
                   to="/login"
                 >
                   Log Out
@@ -108,14 +109,14 @@ const Navbar = () => {
             ) : (
               <>
                 <Link
-                  className="text-lg font-medium duration-300 hover:text-[#F2A64D]"
+                  className="text-lg font-medium duration-300 hover:text-primary"
                   to="/login"
                 >
                   Log In
                 </Link>
                 <span>|</span>
                 <Link
-                  className="text-lg font-medium duration-300 hover:text-[#F2A64D]"
+                  className="text-lg font-medium duration-300 hover:text-primary"
                   to="/register"
                 >
                   Register
@@ -142,7 +143,7 @@ const Navbar = () => {
                 <div className="space-y-1">
                   <li>
                     <NavLink
-                      className="duration-300 hover:text-[#F2A64D]"
+                      className="duration-300 hover:text-primary"
                       to="/"
                     >
                       Home
@@ -151,7 +152,7 @@ const Navbar = () => {
                   <div className="h-[1px] w-full bg-slate-300"></div>
                   <li>
                     <NavLink
-                      className="duration-300 hover:text-[#F2A64D]"
+                      className="duration-300 hover:text-primary"
                       to="/all-items"
                     >
                       All Items
@@ -160,7 +161,7 @@ const Navbar = () => {
                   <div className="h-[1px] w-full bg-slate-300"></div>
                   <li>
                     <NavLink
-                      className="duration-300 hover:text-[#F2A64D]"
+                      className="duration-300 hover:text-primary"
                       to="/blog"
                     >
                       Blog
@@ -171,7 +172,7 @@ const Navbar = () => {
                     <li>
                       <button
                         onClick={handleLogOut}
-                        className="font-medium duration-300 hover:text-[#F2A64D]"
+                        className="font-medium duration-300 hover:text-primary"
                         to="/login"
                       >
                         Log Out
@@ -181,7 +182,7 @@ const Navbar = () => {
                     <>
                       <li>
                         <NavLink
-                          className="font-medium duration-300 hover:text-[#F2A64D]"
+                          className="font-medium duration-300 hover:text-primary"
                           to="/login"
                         >
                           Log In
@@ -190,7 +191,7 @@ const Navbar = () => {
                       <div className="h-[1px] w-full bg-slate-300"></div>
                       <li>
                         <NavLink
-                          className="font-medium duration-300 hover:text-[#F2A64D]"
+                          className="font-medium duration-300 hover:text-primary"
                           to="/register"
                         >
                           Register

@@ -28,7 +28,7 @@ const SingleFood = () => {
             {category}
           </span>
           <h3 className="text-xl font-semibold md:text-3xl">
-            Price:<span className="text-[#F2A64D]"> {price} $</span>
+            Price:<span className="text-primary"> {price} $</span>
           </h3>
           <h3 className="text-xl">
             <span className="font-semibold">Made By: </span>
@@ -41,7 +41,7 @@ const SingleFood = () => {
           <p className="text-lg font-light">{shortDescription}</p>
           <Link
             to={`/purchase/${_id}`}
-            className="btn border-0 bg-[#F2A64D] text-white hover:bg-[#c5863e]"
+            className="btn border-0 bg-primary text-white hover:bg-[#c5863e]"
           >
             Order
           </Link>

@@ -12,12 +12,12 @@ const TopItem = ({ food }) => {
           {category}
         </span>
         <h3 className="text-xl font-semibold">
-          Price:<span className="text-[#F2A64D]"> {price} $</span>
+          Price:<span className="text-primary"> {price} $</span>
         </h3>
         <Link
           to={`/all-items/${_id}`}
           food={food}
-          className="btn btn-sm border-0 bg-[#F2A64D] text-white hover:bg-[#F2A64D]"
+          className="btn btn-sm border-0 bg-primary text-white hover:bg-primary"
         >
           See Details
         </Link>

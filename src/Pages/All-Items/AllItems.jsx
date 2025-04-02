@@ -31,7 +31,7 @@ const AllItems = () => {
   if (isPending) {
     return (
       <div className="my-20 flex justify-center duration-300">
-        <span className="loading loading-dots loading-lg text-[#F2A64D]"></span>
+        <span className="loading loading-dots loading-lg text-primary"></span>
       </div>
     );
   }
@@ -81,7 +81,7 @@ const AllItems = () => {
           placeholder="Search Your Food"
           className="input w-full rounded-full bg-gray-100 focus:outline-none md:w-1/2"
         />
-        <button className="btn btn-circle border-0 bg-[#F2A64D] text-white hover:bg-[#aa7436]">
+        <button className="btn btn-circle border-0 bg-primary text-white hover:bg-[#aa7436]">
           <BiSearchAlt className="text-xl"></BiSearchAlt>
         </button>
       </form>
@@ -94,7 +94,7 @@ const AllItems = () => {
       <div className="mb-5 flex justify-center gap-2">
         <button
           onClick={handlePrevious}
-          className="btn btn-circle btn-sm flex items-center justify-center border-0 bg-[#F2A64D] text-white hover:bg-[#aa7436]"
+          className="btn btn-circle btn-sm flex items-center justify-center border-0 bg-primary text-white hover:bg-[#aa7436]"
         >
           <FaArrowLeft></FaArrowLeft>
         </button>
@@ -102,7 +102,7 @@ const AllItems = () => {
           <button
             key={pageNumber}
             onClick={() => handleSetCurrentPage(pageNumber)}
-            className={`btn btn-circle btn-sm flex items-center justify-center border-0 bg-[#F2A64D] text-white hover:bg-[#aa7436] ${
+            className={`btn btn-circle btn-sm flex items-center justify-center border-0 bg-primary text-white hover:bg-[#aa7436] ${
               currentPage === pageNumber ? "selected" : ""
             }`}
           >
@@ -111,7 +111,7 @@ const AllItems = () => {
         ))}
         <button
           onClick={handleNext}
-          className="btn btn-circle btn-sm flex items-center justify-center border-0 bg-[#F2A64D] text-white hover:bg-[#aa7436]"
+          className="btn btn-circle btn-sm flex items-center justify-center border-0 bg-primary text-white hover:bg-[#aa7436]"
         >
           <FaArrowRight></FaArrowRight>
         </button>

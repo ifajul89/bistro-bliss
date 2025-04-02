@@ -21,7 +21,7 @@ const ServingCustomer = () => {
             <h3 className="text-lg">OVER THE YEARS</h3>
             <div className="flex gap-10 lg:gap-20">
               <div>
-                <h3 className="text-3xl font-semibold text-[#F2A64D] lg:text-5xl">
+                <h3 className="text-3xl font-semibold text-primary lg:text-5xl">
                   30+
                 </h3>
                 <p className="text-[10px] font-medium text-gray-600 sm:text-sm lg:text-base">
@@ -31,7 +31,7 @@ const ServingCustomer = () => {
                 </p>
               </div>
               <div>
-                <h3 className="text-3xl font-semibold text-[#F2A64D] lg:text-5xl">
+                <h3 className="text-3xl font-semibold text-primary lg:text-5xl">
                   50+
                 </h3>
                 <p className="text-[10px] font-medium text-gray-600 sm:text-sm lg:text-base">
@@ -41,7 +41,7 @@ const ServingCustomer = () => {
                 </p>
               </div>
               <div>
-                <h3 className="text-3xl font-semibold text-[#F2A64D] lg:text-5xl">
+                <h3 className="text-3xl font-semibold text-primary lg:text-5xl">
                   8+
                 </h3>
                 <p className="text-[10px] font-medium text-gray-600 sm:text-sm lg:text-base">
@@ -61,7 +61,7 @@ const ServingCustomer = () => {
       <div className="flex justify-center p-3 md:p-10">
         <div className="grid grid-cols-4 gap-5 text-center md:gap-10">
           <div>
-            <h3 className="text-xl font-semibold text-[#F2A64D] md:text-6xl">
+            <h3 className="text-xl font-semibold text-primary md:text-6xl">
               26
             </h3>
             <p className="text-[10px] font-medium text-gray-600 sm:text-sm lg:text-base">
@@ -69,7 +69,7 @@ const ServingCustomer = () => {
             </p>
           </div>
           <div>
-            <h3 className="text-xl font-semibold text-[#F2A64D] md:text-6xl">
+            <h3 className="text-xl font-semibold text-primary md:text-6xl">
               100
             </h3>
             <p className="text-[10px] font-medium text-gray-600 sm:text-sm lg:text-base">
@@ -77,7 +77,7 @@ const ServingCustomer = () => {
             </p>
           </div>
           <div>
-            <h3 className="text-xl font-semibold text-[#F2A64D] md:text-6xl">
+            <h3 className="text-xl font-semibold text-primary md:text-6xl">
               50
             </h3>
             <p className="text-[10px] font-medium text-gray-600 sm:text-sm lg:text-base">
@@ -85,7 +85,7 @@ const ServingCustomer = () => {
             </p>
           </div>
           <div>
-            <h3 className="text-xl font-semibold text-[#F2A64D] md:text-6xl">
+            <h3 className="text-xl font-semibold text-primary md:text-6xl">
               15,000
             </h3>
             <p className="text-[10px] font-medium text-gray-600 sm:text-sm lg:text-base">

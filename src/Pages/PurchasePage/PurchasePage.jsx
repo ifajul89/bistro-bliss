@@ -203,7 +203,7 @@ const PurchasePage = () => {
             ) : (
               ""
             )}
-            <button className="btn col-span-2 mt-5 w-full rounded-full border-0 bg-[#F2A64D] text-white hover:bg-[#aa7436] md:mt-0">
+            <button className="btn col-span-2 mt-5 w-full rounded-full border-0 bg-primary text-white hover:bg-[#aa7436] md:mt-0">
               Purchase
             </button>
           </form>

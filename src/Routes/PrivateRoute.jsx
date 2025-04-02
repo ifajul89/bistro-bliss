@@ -11,7 +11,7 @@ const PrivateRoute = ({ children }) => {
   if (loading) {
     return (
       <div className="my-20 flex justify-center duration-300">
-        <span className="loading loading-dots loading-lg text-[#F2A64D]"></span>
+        <span className="loading loading-dots loading-lg text-primary"></span>
       </div>
     );
   }

@@ -4,7 +4,7 @@ const Footer = () => {
       <footer className="footer footer-center bg-[#2F2F2F] p-10 text-white">
         <aside>
           <div className="logo my-3 flex flex-1 items-center justify-start leading-none lg:justify-center">
-            <h3 className="text-6xl text-[#F2A64D]">B</h3>
+            <h3 className="text-6xl text-primary">B</h3>
             <div className="text-xl font-semibold leading-none">
               <h3>istro</h3>
               <h3>liss~</h3>
@@ -19,7 +19,7 @@ const Footer = () => {
             {/* eslint-disable-next-line react/no-unescaped-entities */}
             Copyright © 2023 - All right reserved to "
             <a
-              className="font-semibold duration-300 hover:text-[#F2A64D] hover:underline"
+              className="font-semibold duration-300 hover:text-primary hover:underline"
               href="https://github.com/bluebird089"
             >
               {/* eslint-disable-next-line react/no-unescaped-entities */}

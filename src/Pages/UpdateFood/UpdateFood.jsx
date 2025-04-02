@@ -71,7 +71,7 @@ const UpdateFood = () => {
         <h4 className="font-cursive font bold text-center sm:text-2xl lg:text-5xl">
           Update Your Food
         </h4>
-        <h4 className="font-cursive font bold text-center text-[#F2A64D] sm:text-2xl lg:text-5xl">
+        <h4 className="font-cursive font bold text-center text-primary sm:text-2xl lg:text-5xl">
           Bon Appétit
         </h4>
       </div>
@@ -169,7 +169,7 @@ const UpdateFood = () => {
             />
           </div>
           <div className="form-control mt-6">
-            <button className="btn rounded-full border-0 bg-[#F2A64D] text-white hover:bg-[#d68a34]">
+            <button className="btn rounded-full border-0 bg-primary text-white hover:bg-[#d68a34]">
               Add Food
             </button>
           </div>

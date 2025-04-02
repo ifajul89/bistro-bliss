@@ -13,7 +13,7 @@ const Blog = () => {
         <div className="my-5 space-y-5 md:my-10">
           <div className="space-y-5 rounded-3xl border-2 border-gray-400 p-5 md:p-10">
             <h3 className="text-xl font-semibold md:text-3xl">
-              <span className="font-extrabold text-[#F2A64D]">~ </span>
+              <span className="font-extrabold text-primary">~ </span>
               What is One way data binding?
             </h3>
             <p className="font-light text-gray-600 md:text-lg">
@@ -28,7 +28,7 @@ const Blog = () => {
           </div>
           <div className="space-y-5 rounded-3xl border-2 border-gray-400 p-5 md:p-10">
             <h3 className="text-xl font-semibold md:text-3xl">
-              <span className="font-extrabold text-[#F2A64D]">~ </span>
+              <span className="font-extrabold text-primary">~ </span>
               What is NPM in node.js?
             </h3>
             <p className="font-light text-gray-600 md:text-lg">
@@ -43,7 +43,7 @@ const Blog = () => {
           </div>
           <div className="space-y-5 rounded-3xl border-2 border-gray-400 p-5 md:p-10">
             <h3 className="text-xl font-semibold md:text-3xl">
-              <span className="font-extrabold text-[#F2A64D]">~ </span>
+              <span className="font-extrabold text-primary">~ </span>
               What are the difference between MongoDB database and MySQL?
             </h3>
             <p className="font-light text-gray-600 md:text-lg">

@@ -26,5 +26,5 @@ body {
 }
 
 .active {
-  @apply text-[#F2A64D];
+  @apply text-primary;
 }

@@ -12,7 +12,7 @@ const ErrorPage = () => {
         <h3 className="text-4xl font-semibold">
           <span className="font-bold">404 </span>Not Found
         </h3>
-        <Link to="/" className="btn bg-[#F2A64D] text-white hover:bg-[#f8a03a]">
+        <Link to="/" className="btn bg-primary text-white hover:bg-[#f8a03a]">
           Back to Home
         </Link>
       </div>
