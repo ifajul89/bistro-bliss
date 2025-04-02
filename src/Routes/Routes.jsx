@@ -28,13 +28,13 @@ const router = createBrowserRouter([
         path: "/all-items",
         element: <AllItems></AllItems>,
         loader: () =>
-          fetch("http://localhost:5000/foods-count"),
+          fetch("https://bistro-bliss-server.vercel.app/foods-count"),
       },
       {
         path: "/all-items/:id",
         element: <SingleFood></SingleFood>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/food/${params.id}`),
+          fetch(`https://bistro-bliss-server.vercel.app/food/${params.id}`),
       },
       {
         path: "/purchase/:id",
@@ -44,7 +44,7 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/food/${params.id}`),
+          fetch(`https://bistro-bliss-server.vercel.app/food/${params.id}`),
       },
       {
         path: "/blog",
@@ -82,7 +82,7 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/food/${params.id}`),
+          fetch(`https://bistro-bliss-server.vercel.app/food/${params.id}`),
       },
       {
         path: "/my-order",

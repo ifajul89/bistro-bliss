@@ -11,7 +11,7 @@ const MyAddedFood = () => {
     queryKey: ["cartFoods"],
     queryFn: async () => {
       const res = await fetch(
-        `http://localhost:5000/my-added-foods/?id=${user?.uid}`,
+        `https://bistro-bliss-server.vercel.app/my-added-foods/?id=${user?.uid}`,
         { credentials: "include" },
       );
       return res.json();

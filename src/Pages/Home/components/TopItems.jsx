@@ -7,7 +7,7 @@ const TopItems = () => {
     queryKey: ["top6Data"],
     queryFn: async () => {
       const res = await fetch(
-        "http://localhost:5000/top-foods",
+        "https://bistro-bliss-server.vercel.app/top-foods",
         {
           credentials: "include",
         },

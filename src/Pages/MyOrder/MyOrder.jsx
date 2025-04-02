@@ -12,7 +12,7 @@ const MyOrder = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/carts/?id=${user?.uid}`, {
+      .get(`https://bistro-bliss-server.vercel.app/carts/?id=${user?.uid}`, {
         withCredentials: true,
       })
       .then((res) => setCartFoods(res.data));
@@ -30,7 +30,7 @@ const MyOrder = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         axios
-          .delete(`http://localhost:5000/carts/?id=${id}`)
+          .delete(`https://bistro-bliss-server.vercel.app/carts/?id=${id}`)
           .then((data) => {
             if (data.data.deletedCount > 0) {
               const remaining = cartFoods.filter(
