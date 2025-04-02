@@ -7,7 +7,7 @@ const TopItems = () => {
     queryKey: ["top6Data"],
     queryFn: async () => {
       const res = await fetch(
-        "https://bistro-bliss-server.vercel.app/top-foods",
+        "http://localhost:5000/top-foods",
         {
           credentials: "include",
         },
@@ -30,7 +30,7 @@ const TopItems = () => {
         OUR TOP FOODS
       </h3>
       <div className="my-5 grid gap-5 md:grid-cols-3">
-        {top6Data.map((data) => (
+        {top6Data?.map((data) => (
           <TopItem key={data._id} food={data}></TopItem>
         ))}
       </div>

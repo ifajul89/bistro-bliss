@@ -84,7 +84,7 @@ const PurchasePage = () => {
     };
 
     axios
-      .post("https://bistro-bliss-server.vercel.app/carts", newCart)
+      .post("http://localhost:5000/carts", newCart)
       .then((data) => {
         if (data.data.insertedId) {
           Swal.fire({
@@ -102,7 +102,7 @@ const PurchasePage = () => {
     };
 
     axios
-      .put(`https://bistro-bliss-server.vercel.app/food/${_id}`, updatedFood)
+      .put(`http://localhost:5000/food/${_id}`, updatedFood)
       .then(() => {});
   };
 

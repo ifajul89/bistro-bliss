@@ -22,7 +22,7 @@ const AllItems = () => {
     queryKey: ["foods", search, currentPage, itemsPerPage],
     queryFn: async () => {
       const res = await fetch(
-        `https://bistro-bliss-server.vercel.app/foods?search=${search}&page=${currentPage}&size=${itemsPerPage}`,
+        `http://localhost:5000/foods?search=${search}&page=${currentPage}&size=${itemsPerPage}`,
       );
       return res.json();
     },

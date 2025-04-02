@@ -37,7 +37,7 @@ const AddFood = () => {
     };
 
     axios
-      .post("https://bistro-bliss-server.vercel.app/foods", newFood)
+      .post("http://localhost:5000/foods", newFood)
       .then((data) => {
         if (data.data.insertedId) {
           Swal.fire({
