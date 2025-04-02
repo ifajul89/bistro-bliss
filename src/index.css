@@ -8,8 +8,8 @@ body {
   font-family: "Jost", sans-serif;
 }
 
-.container{
-  @apply !max-w-[1200px] !mx-auto md:!px-5
+.container {
+  @apply !mx-auto !max-w-[1200px] md:!px-5;
 }
 
 .logo,
@@ -27,4 +27,14 @@ body {
 
 .active {
   @apply text-primary;
+}
+
+/* Swal Container */
+.swal2-container .swal2-popup {
+  border-radius: 20px !important;
+}
+
+/* Swal Button */
+div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
+  border-radius: 10px !important;
 }

@@ -61,6 +61,7 @@ const Register = () => {
             title: "Success",
             text: "Signed In Successfully",
             icon: "success",
+            confirmButtonColor: "#F2A64D"
           });
           navigate(location?.state ? location.state : "/");
         }
@@ -79,6 +80,7 @@ const Register = () => {
             title: "Success",
             text: "Signed In Successfully",
             icon: "success",
+            confirmButtonColor: "#F2A64D"
           });
           navigate(location?.state ? location.state : "/");
         }

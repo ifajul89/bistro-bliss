@@ -49,6 +49,7 @@ const PurchasePage = () => {
         title: "Sorry!",
         text: "We Are Out Of This Item",
         icon: "error",
+        confirmButtonColor: "#F2A64D"
       });
       return;
     }
@@ -58,6 +59,7 @@ const PurchasePage = () => {
         title: "Oops!",
         text: "You Can't Order More Than Stock Item",
         icon: "error",
+        confirmButtonColor: "#F2A64D"
       });
       return;
     }
@@ -67,6 +69,7 @@ const PurchasePage = () => {
         title: "Oops!",
         text: "You Can't Order Your Own Item",
         icon: "error",
+        confirmButtonColor: "#F2A64D"
       });
       return;
     }
@@ -91,6 +94,7 @@ const PurchasePage = () => {
             title: "Success",
             text: "Ordered Food Successfully",
             icon: "success",
+            confirmButtonColor: "#F2A64D"
           });
           navigate("/");
         }

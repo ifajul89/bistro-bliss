@@ -17,7 +17,7 @@ const Navbar = () => {
           title: "Success",
           text: "Logged Out Successfully",
           icon: "success",
-          confirmButtonColor: ""
+          confirmButtonColor: "#F2A64D"
         });
         navigate("/");
       })
