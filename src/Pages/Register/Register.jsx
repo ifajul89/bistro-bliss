@@ -80,7 +80,7 @@ const Register = () => {
             title: "Success",
             text: "User Created Successfully",
             icon: "success",
-            confirmButtonColor: "#F2A64D"
+            confirmButtonColor: "#F2A64D",
           });
           navigate(location?.state ? location.state : "/");
         }

@@ -50,7 +50,7 @@ const UpdateFood = () => {
             title: "Success",
             text: "Item Updated Successfully",
             icon: "success",
-            confirmButtonColor: "#F2A64D"
+            confirmButtonColor: "#F2A64D",
           });
           navigate("/");
         }

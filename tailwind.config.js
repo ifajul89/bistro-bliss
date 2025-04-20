@@ -4,8 +4,8 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: "#F2A64D"
-      }
+        primary: "#F2A64D",
+      },
     },
   },
   plugins: [require("daisyui")],

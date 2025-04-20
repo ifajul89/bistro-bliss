@@ -17,7 +17,7 @@ const Navbar = () => {
           title: "Success",
           text: "Logged Out Successfully",
           icon: "success",
-          confirmButtonColor: "#F2A64D"
+          confirmButtonColor: "#F2A64D",
         });
         navigate("/");
       })
@@ -142,10 +142,7 @@ const Navbar = () => {
                 </h3>
                 <div className="space-y-1">
                   <li>
-                    <NavLink
-                      className="duration-300 hover:text-primary"
-                      to="/"
-                    >
+                    <NavLink className="duration-300 hover:text-primary" to="/">
                       Home
                     </NavLink>
                   </li>
